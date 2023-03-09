@@ -4,16 +4,19 @@
       <div class="service-cards">
         <div class="service-card">
           <h3>Диагностика ПК</h3>
+          <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
           <p>Бесплатная диагностика и оценка ремонта вашего ПК</p>
           <button class="btn">Узнать больше</button>
         </div>
         <div class="service-card">
           <h3>Ремонт</h3>
-          <p>Оказание ремонта вашему комьютерув</p>
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <p>Оказание услуг ремонта вашему комьютеров</p>
           <button class="btn">Узнать больше</button>
         </div>
         <div class="service-card">
           <h3>Настройка ПО</h3>
+          <i class="fa-solid fa-gears"></i>
           <p>Установка, обновление и настройка ОС и ПО</p>
           <button class="btn">Узнать больше</button>
         </div>
@@ -22,11 +25,6 @@
 </section>
 
 <style>
-
-h2{
-  text-align: left;  
-}
-
 .services {
   background-color: #f5f5f5;
   padding: 100px 0;
@@ -34,15 +32,17 @@ h2{
   flex-direction: column;
   align-items: center;
   text-align: center;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 
 .service-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 50px;
   align-items: center;
   margin-top: 50px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .service-card {
@@ -54,7 +54,10 @@ h2{
   margin-bottom: 30px;
   text-align: center;
   box-sizing: border-box;
-  
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .service-card h3 {
@@ -79,11 +82,13 @@ h2{
   padding: 15px 30px;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
+  margin-top: auto;
 }
 
 .btn:hover {
   background-color: #630077;
 }
+
 
 
   

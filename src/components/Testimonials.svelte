@@ -23,9 +23,6 @@
   function prevTestimonial() {
     current = (current - 1 + testimonials.length) % testimonials.length;
   }
-
-
-  
 </script>
 
 <section id="testimonials" class="testimonials">
@@ -42,9 +39,11 @@
           <div class="testimonial-card" style="display: none;"></div>
         {/if}
       {/each}
-      <div class="buttons" style="text-align: center;">
-        <button on:click={prevTestimonial} disabled={current === 0}>Назад</button>
-        <button on:click={nextTestimonial} disabled={current === testimonials.length - 1}>Вперед</button>
+      <div class="buttons-container">
+        <div class="buttons" style="text-align: center;">
+          <button on:click={prevTestimonial} disabled={current === 0}>Назад</button>
+          <button on:click={nextTestimonial} disabled={current === testimonials.length - 1}>Вперед</button>
+        </div>
       </div>
     </div>
   </div>
@@ -56,6 +55,7 @@
     padding: 60px 0;
     display: flex;
     justify-content: center;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   }
 
   .testimonial-cards {
@@ -66,13 +66,39 @@
     text-align: center;
   }
 
+  @keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
   .testimonial-card {
     background-color: #fff;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 30px;
-    width: 100%;
     margin-bottom: 40px;
+    width: 800px;
+    height: 150px;
+    animation-name: slide;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
   }
 
   .testimonial-card p {
@@ -87,18 +113,27 @@
     margin-top: 20px;
   }
 
+  .buttons-container {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin-top: auto;
+  }
+
   .buttons {
-    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     display: block;
     text-align: center;
-    margin-top: 20px;
   }
 
   .buttons button {
     display: inline-block;
     background-color: #7e2291;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border-radius: 30px;
     border: none;
     font-size: 16px;

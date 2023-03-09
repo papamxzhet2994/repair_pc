@@ -1,134 +1,153 @@
-<section id="contact" class="contact">
-    <div class="container">
+<section id="contact">
+<div class="contact-container">
+    <div class="contact-details">
       <h2>Контакты</h2>
-      <div class="contact-inner">
-        <div class="contact-form">
-          <h3>Напишите нам</h3>
-          <form>
-            <div class="form-group">
-              <label for="name">Ваше имя</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Ваш email</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              <div class="form-group">
-                <label for="message">Ваше сообщение</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
-              </div>
-              <button class="btn" type="submit">Отправить</button>
-            </form>
-          </div>
-          <div class="contact-info">
-            <h3>Контактная информация</h3>
+      <p>Вы можете связаться с нами любым удобным способом или заказать звонок</p>
+      <p>г. Санкт-Петербург, ул. Садовая 6, Россия</p>
+      <p>Телефон: +7 (123) 456-7890</p>
+      <p>Email: example@example.com</p>
+        <div class="social">
             <ul>
-              <li><i class="fa-sharp fa-solid fa-location-dot"></i>Адрес: ул. Пушкина, д.10, офис 5</li>
-              <li><i class="fa-solid fa-phone"></i>Телефон: +7 (999) 123-45-67</li>
-              <li><i class="fa-solid fa-envelope"></i>Email: info@pc-repair.com</li>
+            <li><a href="https://vk.com/papamxzhet"><i class="fab fa-vk"></i></a></li>
+            <li><a href="https://github.com/papamxzhet2994"><i class="fab fa-telegram"></i></a></li>
             </ul>
-          </div>
         </div>
     </div>
+    <div class="call-request">
+      <h2>Заказать звонок</h2>
+      <form>
+        <label for="name">*Имя:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="phone">*Телефон:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <div class="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent" class="checkbox-wrapper">Я даю согласие на обработку моих персональных данных</label>
+        </div>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 <style>
-
-.contact {
-  background-color: #f5f5f5;
-  padding: 60px 0;
+ul li {
+    list-style-type: none;
+    display: inline;
+    margin: 20px;
+    
 }
-
-.contact h2 {
-  text-align: center;
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 40px;
-}
-
-.contact-inner {
+.contact-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  
 }
 
-.contact-form {
-  width: 60%;
-  margin-right: 40px;
+.contact-details {
+  flex-basis: 45%;
+  margin-left: 170px;
 }
 
-.contact-form h3 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 30px;
+.call-request {
+  flex-basis: 45%;
 }
 
-.contact-form form {
-  display: flex;
-  flex-direction: column;
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.contact-form label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+label {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-  font-size: 16px;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: none;
-  background-color: #fff;
+input[type="text"],
+input[type="tel"] {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  width: 469px;
 }
 
-.contact-form textarea {
-  resize: none;
+
+
+input[type="text"]:hover,
+input[type="tel"]:hover,
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  background-color: rgba(221, 96, 247, 0.274);
 }
 
-.contact-form button {
-  font-size: 18px;
-  font-weight: bold;
-  padding: 15px 30px;
-  border-radius: 5px;
-  border: none;
-  background-color: #007bff;
+button[type="submit"] {
+  background-color: #7e2291;
+;
   color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-  background-color: #0062cc;
-}
-
-.contact-info {
-  width: 35%;
-}
-
-.contact-info h3 {
-  font-size: 24px;
-  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
   margin-bottom: 30px;
+  
 }
 
-.contact-info ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+button[type="submit"]:hover {
+  background-color: #630077;
 }
 
-.contact-info li {
-  font-size: 18px;
-  margin-bottom: 10px;
+.consent {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
 
-.contact-info i {
-  margin-right: 10px;
-  font-size: 20px;
-  color: #007bff;
+.consent input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.consent label {
+  margin-left: 5px;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  position: relative;
+  margin-right: 0.5rem;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background-color: #7e2291;
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+  
+}
+
+label {
+  display: flex;
+  align-items: center;
+  
 }
 </style>

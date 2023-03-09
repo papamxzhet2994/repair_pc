@@ -9,10 +9,9 @@
           </ul>
         </div>
         <div class="footer-social">
-          <ul>
-            <li><a href="https://vk.com/papamxzhet"><i class="fab fa-vk"></i></a></li>
-            <li><a href="https://github.com/papamxzhet2994"><i class="fab fa-github"></i></a></li>
-          </ul>
+
+        </div>
+        <div class="contact-info">
         </div>
       </div>
   </footer>
@@ -22,12 +21,12 @@
   background-color: #222;
   color: #fff;
   padding: 80px 0;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 
 
 
-.footer-nav ul,
-.footer-social ul {
+.footer-nav ul{
   justify-content: center;
   display:flex;
   margin: 0;
@@ -45,22 +44,17 @@
   margin-right: 0;
 }
 
-.footer-nav a,
-.footer-social a {
+.footer-nav a{
   color: #fff;
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s ease;
 }
 
-.footer-nav a:hover,
-.footer-social a:hover {
+.footer-nav a:hover{
   color: #bbb;
 }
 
-.footer-social i {
-  font-size: 24px;
-}
 
 @media only screen and (max-width: 768px) {
 .footer-nav ul li,

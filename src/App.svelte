@@ -6,6 +6,8 @@
     import Testimonials from './components/Testimonials.svelte';
     import Contact from './components/Contact.svelte';
     import Footer from './components/Footer.svelte';
+
+    
 </script>
   
   <Header/>
@@ -17,5 +19,3 @@
     <Contact/>
   </main>
   <Footer/>
-
-  

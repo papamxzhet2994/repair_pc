@@ -16,6 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 .hero-inner {
   text-align: center;

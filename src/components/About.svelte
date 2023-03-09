@@ -1,5 +1,5 @@
 <section id="about" class="about">
-    <div class="container">
+  <div class="container">
       <h2>О нас</h2>
       <div class="about-inner">
         <div class="about-text">
@@ -33,15 +33,15 @@
   align-items: center;
   padding: 100px 0;
   text-align: center;
-  background-image: linear-gradient(to bottom, rgb(247, 37, 237), rgb(21, 248, 116));
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 
 .about h2 {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 28px;
   margin-bottom: 60px;
   color: #000000;
   text-align: left;
+  margin-right: 20px;
 }
 
 .about p {
@@ -89,36 +89,29 @@
   transform: translate(-50%, -50%) scale(1.2);
 }
 
-@media screen and (min-width: 768px) {
-  .about {
-    flex-direction: row;
-    text-align: left;
-  }
+.about-inner {
+  flex-wrap: nowrap;
+}
 
-  .about-inner {
-    flex-wrap: nowrap;
-  }
+.about-text {
+  flex-basis: 50%;
+  margin-right: 50px;
+}
 
-  .about-text {
-    flex-basis: 50%;
-    margin-right: 50px;
-  }
+.about-image {
+  flex-basis: 45%;
+}
 
-  .about-image {
-    flex-basis: 45%;
-  }
+.about-image img {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  transition: all 0.5s ease-in-out;
+}
 
-  .about-image img {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    transition: all 0.5s ease-in-out;
-  }
-
-  .about-image img:hover {
-    transform: scale(1.05);
-  }
+.about-image img:hover {
+  transform: scale(1.05);
 }
 
   </style>
