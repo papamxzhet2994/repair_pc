@@ -1,27 +1,45 @@
 <section id="services" class="services">
-    <div class="container">
-      <h2>Наши услуги</h2>
-      <div class="service-cards">
-        <div class="service-card">
-          <h3>Диагностика ПК</h3>
-          <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-          <p>Бесплатная диагностика и оценка ремонта вашего ПК</p>
-          <button class="btn">Узнать больше</button>
-        </div>
-        <div class="service-card">
-          <h3>Ремонт</h3>
-          <i class="fa-solid fa-screwdriver-wrench"></i>
-          <p>Оказание услуг ремонта вашему комьютеров</p>
-          <button class="btn">Узнать больше</button>
-        </div>
-        <div class="service-card">
-          <h3>Настройка ПО</h3>
-          <i class="fa-solid fa-gears"></i>
-          <p>Установка, обновление и настройка ОС и ПО</p>
-          <button class="btn">Узнать больше</button>
-        </div>
+  <div class="container">
+    <h2>Наши услуги</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <h3>Диагностика ПК</h3>
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+        <p>Бесплатная диагностика и оценка ремонта вашего ПК</p>
+        <button class="btn">Узнать больше</button>
+      </div>
+      <div class="service-card">
+        <h3>Ремонт</h3>
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <p>Оказание услуг ремонта вашему комьютеров</p>
+        <button class="btn">Узнать больше</button>
+      </div>
+      <div class="service-card">
+        <h3>Настройка ПО</h3>
+        <i class="fa-solid fa-gears"></i>
+        <p>Установка, обновление и настройка ОС и ПО</p>
+        <button class="btn">Узнать больше</button>
+      </div>
+      <div class="service-card">
+        <h3>Удаленная поддержка</h3>
+        <i class="fa-solid fa-desktop"></i>
+        <p>Решение проблем с ПК удаленно через интернет</p>
+        <button class="btn">Узнать больше</button>
+      </div>
+      <div class="service-card">
+        <h3>Сборка компьютера</h3>
+        <i class="fa-solid fa-hammer"></i>
+        <p>Сборка ПК под ваши потребности и бюджет</p>
+        <button class="btn">Узнать больше</button>
+      </div>
+      <div class="service-card">
+        <h3>Обучение</h3>
+        <i class="fa-solid fa-graduation-cap"></i>
+        <p>Обучение основам работы с ПК и программами</p>
+        <button class="btn">Узнать больше</button>
+      </div>
     </div>
-    </div>
+  </div>
 </section>
 
 <style>
@@ -45,6 +63,7 @@
   max-width: 1200px;
 }
 
+
 .service-card {
   background-color: #fff;
   border-radius: 10px;
@@ -58,8 +77,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.3s;
 }
 
+.service-card:hover {
+    transform: translateY(-5px);
+    }
+  
 .service-card h3 {
   font-size: 24px;
   margin-bottom: 20px;

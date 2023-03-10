@@ -6,6 +6,7 @@
     import Testimonials from './components/Testimonials.svelte';
     import Contact from './components/Contact.svelte';
     import Footer from './components/Footer.svelte';
+    import Masters from './components/Masters.svelte';
 
     
 </script>
@@ -15,6 +16,7 @@
     <Hero/>
     <Services/>
     <About/>
+    <Masters/>
     <Testimonials/>
     <Contact/>
   </main>

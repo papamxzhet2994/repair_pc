@@ -10,7 +10,7 @@
 
 .hero{
   height: 750px;
-  background-image: linear-gradient(to bottom, rgb(247, 37, 237), rgba(21, 248, 116, 0.5)), url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp5699160.jpg&f=1&nofb=1&ipt=4d688002ea2f25e76ff83f4ea464c86e00b1c515934f94c6ebe8a95e0e980a17&ipo=images");
+  background-image: linear-gradient(to bottom, rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243)), url("");
   background-position: center;
   background-size: cover;
   display: flex;
