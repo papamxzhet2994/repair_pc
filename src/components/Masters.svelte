@@ -3,19 +3,19 @@
       {
         name: 'Иван Иванов',
         specialization: 'Ремонт и сборка ПК',
-        experience: '10 лет опыта',
+        experience: 'Стаж: 10лет',
         photo: 'https://via.placeholder.com/150'
       },
       {
         name: 'Петр Петров',
         specialization: 'Установка и настройка ПО',
-        experience: '5 лет опыта',
+        experience: 'Стаж: 5 лет',
         photo: 'https://via.placeholder.com/150'
       },
       {
         name: 'Анна Сидорова',
         specialization: 'Удаленная поддержка ПК',
-        experience: '7 лет опыта',
+        experience: 'Стаж: 7 лет',
         photo: 'https://via.placeholder.com/150'
       }
     ];

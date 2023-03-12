@@ -1,5 +1,7 @@
 <script>
   import { scrollto } from "svelte-scrollto";
+
+  
 </script>
 
 <header class="header">
@@ -11,21 +13,26 @@
       <li><a href="#masters" use:scrollto={'#masters'}>Мастера</a></li>
       <li><a href="#testimonials" use:scrollto={'#testimonials'}>Отзывы</a></li>
       <li><a href="#contact" use:scrollto={'#contact'}>Контакты</a></li>
-      <li><a href="#hero" use:scrollto={'#hero'}><i class="fa-sharp fa-solid fa-arrow-up"></i></a></li>
+      <li class="scroll-top"><a href="#hero" use:scrollto={'#hero'}><i class="fa-sharp fa-solid fa-arrow-up"></i></a></li>
     </ul>
   </nav>
 </header>
 
 <style>
-  .header {
+   .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
     z-index: 999;
     transition: all 0.3s ease-in-out;
     font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  }
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+   }
 
   .logo {
     font-size: 26px;
@@ -48,11 +55,11 @@
 
   .nav-links li {
     list-style: none;
-    margin-right: 50px;
+    margin: 20px;
   }
 
   .nav-links li:last-child {
-    margin-right: 0;
+    margin-right: 10;
   }
 
   .nav-links a {
@@ -68,4 +75,8 @@
   .nav-links a:hover {
     color: #ff6500;
   }
+
+
 </style>
+
+

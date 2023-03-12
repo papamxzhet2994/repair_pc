@@ -111,7 +111,7 @@
   background-color: #7e2291;
   color: #fff;
   padding: 10px 30px;
-  border-radius: 30px;
+  border-radius: 15px;
   border: none;
   font-size: 16px;
   cursor: pointer;

@@ -1,8 +1,23 @@
+<script>
+  import Modal from './Modal.svelte';
+
+  let isOpen = false;
+
+  function openModal() {
+    isOpen = true;
+  }
+
+  function closeModal() {
+    isOpen = false;
+  }
+</script>
+
 <section class="hero">
     <div class="hero-inner">
       <h1>Ремонт ПК</h1>
       <p>Качественный ремонт компьютеров и ноутбуков по доступным ценам</p>
-      <button class="btn">Заказать ремонт</button>
+      <button class="btn" on:click={openModal}>Заказать ремонт</button>
+      <Modal bind:isOpen={isOpen} onClose={closeModal} />
     </div>
 </section>
 
@@ -39,7 +54,7 @@
   background-color: #7e2291;
   color: #fff;
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -50,3 +65,5 @@
 
 
 </style>
+
+

@@ -13,6 +13,7 @@
     "@tsconfig/svelte": "^3.0.0",
     "sass": "^1.58.3",
     "svelte": "^3.55.1",
+    "svelte-materialify": "^0.3.11",
     "svelte-scrollto": "^0.2.0",
     "vite": "^4.1.0"
   },

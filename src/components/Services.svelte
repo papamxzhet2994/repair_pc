@@ -98,7 +98,7 @@
 .btn {
   background-color: #7e2291;
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
   color: #fff;
   cursor: pointer;
   font-size: 16px;

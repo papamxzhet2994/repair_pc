@@ -84,10 +84,9 @@ input[type="tel"]:focus {
 
 button[type="submit"] {
   background-color: #7e2291;
-;
   color: #fff;
   padding: 0.5rem 1rem;
-  border-radius: 30px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
