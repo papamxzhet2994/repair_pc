@@ -53,6 +53,8 @@
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 
+
+
 .service-cards {
   display: flex;
   flex-wrap: wrap;
@@ -81,39 +83,55 @@
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
     }
   
-.service-card h3 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.service-card p {
-  font-size: 16px;
-  line-height: 24px;
-  margin-bottom: 30px;
-}
-
-.btn {
-  background-color: #7e2291;
-  border: none;
-  border-radius: 20px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 15px 30px;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-  margin-top: auto;
-}
-
-.btn:hover {
-  background-color: #630077;
-}
-
-
-
-  
-</style>
+    .service-card h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .service-card p {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+    
+    .btn {
+      background-color: #7e2291;
+      border: none;
+      border-radius: 20px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 15px 30px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin-top: auto;
+    }
+    
+    .btn:hover {
+      background-color: #630077;
+    }
+    
+    .service-card:hover .btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .service-card .btn {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .service-card .btn:hover {
+      background-color: #7e2291;
+      opacity: 1;
+    }
+    
+    .service-card .btn:focus {
+      outline: none;
+    }
+  </style>

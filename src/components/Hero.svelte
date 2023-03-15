@@ -17,25 +17,29 @@
       <h1>Ремонт ПК</h1>
       <p>Качественный ремонт компьютеров и ноутбуков по доступным ценам</p>
       <button class="btn" on:click={openModal}>Заказать ремонт</button>
-      <Modal bind:isOpen={isOpen} onClose={closeModal} />
+      <Modal bind:isOpen={isOpen} onClose={closeModal}/>
     </div>
 </section>
 
 <style>
 
-.hero{
-  height: 750px;
-  background-image: linear-gradient(to bottom, rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243)), url("");
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-}
-.hero-inner {
-  text-align: center;
-  color: #ffffff;
+  
+  
+  .hero{
+    height: 750px;
+    background-image: linear-gradient(to bottom, rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243)), url("");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  }
+  
+  
+  .hero-inner {
+    text-align: center;
+    color: #ffffff;
 }
 
 .hero h1 {

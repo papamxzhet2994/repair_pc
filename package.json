@@ -11,6 +11,7 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "@tsconfig/svelte": "^3.0.0",
+    "@types/hsl-to-hex": "^1.0.0",
     "sass": "^1.58.3",
     "svelte": "^3.55.1",
     "svelte-materialify": "^0.3.11",
@@ -18,6 +19,9 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
+    "@pixi/filter-kawase-blur": "^5.1.1",
+    "pixi": "^0.3.1",
+    "pixi.js": "^7.1.4",
     "svelte-routing": "^1.6.0",
     "tweened": "^0.1.2"
   }
