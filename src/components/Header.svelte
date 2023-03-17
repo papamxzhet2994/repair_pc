@@ -43,7 +43,6 @@
     background: linear-gradient(to right,rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-left: 10px;
     margin-top: 1px;
   }
 
@@ -73,7 +72,7 @@
   }
 
   .nav-links a:hover {
-    color: #ff6500;
+    color: #7107ad;
   }
 
 

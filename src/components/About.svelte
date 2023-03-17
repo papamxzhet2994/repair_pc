@@ -14,18 +14,17 @@
   </section>
 
 <style>
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
-
 .about {
   display: flex;
   flex-direction: column;
@@ -35,38 +34,31 @@
   text-align: center;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
-
 .about h2 {
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 60px;
   color: #000000;
-  text-align: left;
-  margin-right: 20px;
+  text-align: center;
 }
-
 .about p {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 30px;
   color: #000000;
 }
-
 .about-inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
-
 .about-text {
   flex-basis: 100%;
   text-align: left;
 }
-
 .about-text p:first-child {
   margin-top: 0;
 }
-
 .about-image {
   display: flex;
   justify-content: center;
@@ -76,32 +68,27 @@
   overflow: hidden;
   flex-basis: 100%;
 }
-
 .about-image img {
+  max-width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1.1);
   transition: all 0.3s ease-in-out;
 }
-
 .about-image img:hover {
   transform: translate(-50%, -50%) scale(1.2);
 }
-
 .about-inner {
   flex-wrap: nowrap;
 }
-
 .about-text {
   flex-basis: 50%;
   margin-right: 50px;
 }
-
 .about-image {
   flex-basis: 45%;
 }
-
 .about-image img {
   position: relative;
   top: auto;
@@ -109,9 +96,9 @@
   transform: none;
   transition: all 0.5s ease-in-out;
 }
-
 .about-image img:hover {
   transform: scale(1.05);
 }
 
-  </style>
+
+</style>

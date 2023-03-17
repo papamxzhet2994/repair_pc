@@ -44,6 +44,7 @@
   
     .masters h2 {
       margin-bottom: 20px;
+      font-size: 26px;
     }
   
     .master-cards {
