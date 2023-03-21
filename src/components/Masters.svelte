@@ -40,11 +40,12 @@
   <style>
     .masters {
       text-align: center;
+      background-color: #f5f5f5;
     }
   
     .masters h2 {
-      margin-bottom: 20px;
       font-size: 26px;
+      padding-top: 50px;
     }
   
     .master-cards {
@@ -59,7 +60,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       margin: 20px;
-      margin-top: 70px;
+      margin-top: 50px;
       margin-bottom: 70px;
       padding: 20px;
       text-align: center;

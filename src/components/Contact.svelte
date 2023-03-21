@@ -42,7 +42,7 @@ ul li {
   flex-wrap: wrap;
   justify-content: space-between;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  
+  background-color: #f5f5f5;
 }
 
 .contact-details {

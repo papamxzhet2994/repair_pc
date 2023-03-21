@@ -50,9 +50,15 @@
 </section>
 
 <style>
+
+  .testimonials h2{
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
  .testimonials {
-  background-color: #f5f5f5;
-  padding: 60px 0;
+  background-color: #ffffff;
+  padding: 50px 0;
   display: flex;
   justify-content: center;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
@@ -121,38 +127,6 @@
 
 .buttons button:hover {
   background-color: #630077;
-}
-
-/* Анимация слайд влево для кнопки "назад" */
-.slide-left {
-  animation-name: slide-left;
-}
-
-@keyframes slide-left {
-  from {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-/* Анимация слайд вправо для кнопки "вперед" */
-.slide-right {
-  animation-name: slide-right;
-}
-
-@keyframes slide-right {
-  from {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-  }
 }
 </style>
 

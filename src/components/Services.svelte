@@ -45,7 +45,7 @@
 <style>
 .services {
   background-color: #f5f5f5;
-  padding: 100px 0;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,6 +83,8 @@
 
 .service-card:hover {
   transform: translateY(-5px);
+  background-image: linear-gradient(to bottom, rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243)), url("");
+  color: #fff;
     }
   
     .service-card h3 {
