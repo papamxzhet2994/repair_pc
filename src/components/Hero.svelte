@@ -24,14 +24,14 @@
 <style>
 .hero{
   height: 750px;
-  background: linear-gradient(500deg,rgb(166, 4, 211), rgb(63, 81, 181), rgb(33, 149, 243));
+  background: linear-gradient(/*135deg*/to bottom,rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243));
   background-position: center;
-  background-size: 400% 400%;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  animation: gradient 10s ease infinite;
+  /* animation: gradient 5s ease infinite; */
 }
 
 @keyframes gradient {
