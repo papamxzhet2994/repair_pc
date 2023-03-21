@@ -22,20 +22,29 @@
 </section>
 
 <style>
+.hero{
+  height: 750px;
+  background: linear-gradient(500deg,rgb(166, 4, 211), rgb(63, 81, 181), rgb(33, 149, 243));
+  background-position: center;
+  background-size: 400% 400%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  animation: gradient 10s ease infinite;
+}
 
-  
-  
-  .hero{
-    height: 750px;
-    background-image: linear-gradient(to bottom, rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243)), url("");
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
-  
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
   
   .hero-inner {
     text-align: center;
@@ -49,8 +58,10 @@
 
 .hero p {
   font-size: 1.5rem;
+  color: #fff;
   margin-bottom: 2rem;
 }
+
 
 .hero .btn {
   font-size: 1.25rem;
@@ -65,6 +76,7 @@
 
 .hero .btn:hover {
   background-color: #630077;
+  transform: translateY(-2px);
 }
 
 
