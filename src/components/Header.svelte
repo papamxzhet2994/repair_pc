@@ -1,7 +1,5 @@
 <script>
   import { scrollto } from "svelte-scrollto";
-
-  
 </script>
 
 <header class="header">
@@ -75,7 +73,25 @@
     color: #7107ad;
   }
 
+  .scroll-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2;
+}
 
+.scroll-top a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+}
 </style>
 
 
