@@ -101,4 +101,35 @@
 }
 
 
+@media (max-width: 768px) {
+  .about {
+    padding: 50px 0;
+  }
+
+  .about h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+
+  .about p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .about-inner {
+    flex-direction: column;
+  }
+
+  .about-text {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+
+  
+}
 </style>

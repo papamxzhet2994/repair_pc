@@ -21,7 +21,7 @@
         <label for="phone">*Телефон:</label>
         <input type="tel" id="phone" name="phone" required>
         <div class="consent">
-          <input type="checkbox" id="consent" name="consent" required>
+          <input type="checkbox" id="consent" name="consent" required class="checkbox1">
           <label for="consent" class="checkbox-wrapper">Я даю согласие на обработку моих персональных данных</label>
         </div>
         <button type="submit">Отправить</button>
@@ -148,5 +148,54 @@ label {
   display: flex;
   align-items: center;
   
+}
+
+.checkbox{
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .contact-details {
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+  .call-request {
+    flex-basis: 100%;
+
+  }
+
+  input[type="text"],
+  input[type="tel"] {
+    width: 350px;
+  }
+
+  .social {
+    align-items: start;
+  }
+
+  .social ul {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .social ul li {
+    margin-right: 1rem;
+  margin-bottom: 1rem;
+  }
+
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+  }
 }
 </style>

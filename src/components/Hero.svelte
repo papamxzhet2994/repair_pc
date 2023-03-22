@@ -24,17 +24,17 @@
 <style>
 .hero{
   height: 750px;
-  background: linear-gradient(/*135deg*/to bottom,rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243));
+  background: linear-gradient(to bottom ,rgb(153, 0, 196), rgb(63, 81, 181), rgb(33, 149, 243));
   background-position: center;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  /* animation: gradient 5s ease infinite; */
+  /* animation: gradient 10s ease infinite; */
 }
 
-@keyframes gradient {
+/* @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
@@ -44,7 +44,7 @@
   100% {
     background-position: 0% 50%;
   }
-}
+} */
   
   .hero-inner {
     text-align: center;
@@ -80,6 +80,30 @@
 }
 
 
+@media (max-width: 768px) {
+  .hero {
+    height: 500px;
+    font-size: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .hero-inner {
+    text-align: center;
+    color: #ffffff;
+  }
+}
 </style>
 
 

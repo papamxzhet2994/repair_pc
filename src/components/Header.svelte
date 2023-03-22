@@ -1,5 +1,7 @@
 <script>
   import { scrollto } from "svelte-scrollto";
+
+  
 </script>
 
 <header class="header">
@@ -15,6 +17,7 @@
     </ul>
   </nav>
 </header>
+
 
 <style>
    .header {
@@ -91,6 +94,46 @@
   border-radius: 50%;
   text-decoration: none;
   font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .scroll-top {
+    display: none;
+  }
+
+  .header {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+   }
+
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(to right,rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 1px;
+    margin: auto;
+  }
+
+  
+
 }
 </style>
 

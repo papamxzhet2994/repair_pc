@@ -128,6 +128,22 @@
 .buttons button:hover {
   background-color: #630077;
 }
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .buttons {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin-top: auto;
+  }
+}
 </style>
 
 

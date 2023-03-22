@@ -90,5 +90,42 @@
       font-size: 18px;
       margin-bottom: 5px;
     }
+
+    @media screen and (max-width: 768px) {
+      .master-card {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .master-card:hover {
+        transform: none;
+      }
+
+      .master-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .master-card p {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      .master-photo {
+        height: 100px;
+        width: 100px;
+        margin-bottom: 10px;
+      }
+
+      .masters h2 {
+        font-size: 20px;
+        padding-top: 30px;
+      }
+
+      .masters {
+        padding: 20px;
+      }
+      
+    }
   </style>
   

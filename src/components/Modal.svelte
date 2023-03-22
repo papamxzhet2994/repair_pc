@@ -133,5 +133,77 @@ cursor: pointer;
 font-size: 2rem;
 color: #333;
 }
+
+
+@media (max-width: 768px) {
+  .modal {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+  }
+  .modal-content {
+    padding: 20px;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 15;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .modal-content label {
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+
+  .modal-content textarea{
+    display: block;
+    width: 329px;
+    height: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  .modal-content input[type="text"],
+  .modal-content input[type="email"] {
+    display: block;
+    width: 325px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-top: 5px;
+    padding-right: 10px;
+  }
+
+  .modal-content button.send {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: #810791;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    justify-content: center;
+  }
+}
 </style>
   
