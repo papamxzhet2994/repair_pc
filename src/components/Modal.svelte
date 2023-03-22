@@ -49,14 +49,13 @@
   justify-content: center;
   align-items: center;
   overflow-y: auto;
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  overflow-x: hidden;
+  transition: 0.3s;
 }
 
 .modal-open {
-    opacity: 1;
-    transform: translateY(0);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .modal-content {

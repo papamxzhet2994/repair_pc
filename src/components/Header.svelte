@@ -1,7 +1,5 @@
 <script>
   import { scrollto } from "svelte-scrollto";
-
-  
 </script>
 
 <header class="header">
@@ -39,15 +37,13 @@
     font-size: 26px;
     font-weight: bold;
     text-decoration: none;
-    color: #333;
-    transition: all 0.3s ease-in-out;
     background: linear-gradient(to right,rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 1px;
   }
 
-  .nav-links {
+.nav-links {
     display: flex;
     margin: 0;
     padding: 0;
@@ -74,6 +70,7 @@
 
   .nav-links a:hover {
     color: #7107ad;
+    transform: translateY(-2px); 
   }
 
   .scroll-top {
@@ -81,7 +78,10 @@
   right: 16px;
   bottom: 16px;
   z-index: 2;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
+
 
 .scroll-top a {
   display: flex;
@@ -94,7 +94,11 @@
   border-radius: 50%;
   text-decoration: none;
   font-size: 24px;
+  transition: all 0.3s ease-in-out;
 }
+
+
+
 
 @media (max-width: 768px) {
   .nav-links {

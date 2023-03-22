@@ -85,110 +85,118 @@
   transform: translateY(-5px);
   background-image: linear-gradient(to bottom, rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243)), url("");
   color: #fff;
-    }
+}
   
-    .service-card h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
+.service-card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
     
-    .service-card p {
-      font-size: 16px;
-      line-height: 24px;
-      margin-bottom: 30px;
-    }
+.service-card p {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+
+
     
-    .btn {
-      background-color: #7e2291;
-      border: none;
-      border-radius: 20px;
-      color: #fff;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      padding: 15px 30px;
-      text-transform: uppercase;
-      transition: background-color 0.3s ease;
-      margin-top: auto;
-    }
+.btn {
+  background-color: #7e2291;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+}
     
-    .btn:hover {
-      background-color: #630077;
-    }
+.btn:hover {
+  background-color: #630077;
+}
     
-    .service-card:hover .btn {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.service-card:hover .btn {
+  opacity: 1;
+  transform: translateY(0);
+}
     
-    .service-card .btn {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
+.service-card:hover .btn:focus {
+  outline: none;
+}
+
+
     
-    .service-card .btn:hover {
-      background-color: #7e2291;
-      opacity: 1;
-    }
+.service-card .btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
     
-    .service-card .btn:focus {
-      outline: none;
-    }
+.service-card .btn:hover {
+  background-color: #7e2291;
+  opacity: 1;
+}
+    
+.service-card .btn:focus {
+  outline: none;
+}
 
-    @media (max-width: 768px){
-      .service-card {
-        width: 100%;
-        margin-bottom: 30px;
-      }
+@media (max-width: 768px){
+  .service-card {
+  width: 100%;
+  margin-bottom: 30px;
+}
 
-      .service-card:hover {
-        transform: translateY(-5px);
-        background-image: linear-gradient(to bottom, rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243)), url("");
-        color: #fff;
-      }
+.service-card:hover {
+  transform: translateY(-5px);
+  background-image: linear-gradient(to bottom, rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243)), url("");
+  color: #fff;
+}
 
-      .service-card h3 {
-        font-size: 20px;
-        margin-bottom: 20px;
-      }
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
 
-      .service-card p {
-        font-size: 14px;
-        line-height: 20px;
-        margin-bottom: 30px;
-      }
+.service-card p {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
 
-      .btn {
-        font-size: 14px;
-        padding: 10px 20px;
-        margin-top: auto;
-      }
+.btn {
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-top: auto;
+}
 
-      .service-card:hover .btn {
-        opacity: 1;
-        transform: translateY(0);
-      }
+.service-card:hover .btn {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-      .service-card .btn {
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-      }
+.service-card .btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-      .service-card .btn:hover {
-        background-color: #7e2291;
-        opacity: 1;
-      }
+.service-card .btn:hover {
+  background-color: #7e2291;
+  opacity: 1;
+}
 
-      .service-card .btn:focus {
-        outline: none;
-      }
+.service-card .btn:focus {
+  outline: none;
+}
 
-      .service-cards {
-        margin-top: 30px;
-        justify-content: center;
-        flex-direction: column;
-      }
-    }
-  </style>
+.service-cards {
+  margin-top: 30px;
+  justify-content: center;
+  flex-direction: column;
+}
+}
+</style>

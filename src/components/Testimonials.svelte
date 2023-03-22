@@ -50,6 +50,10 @@
 </section>
 
 <style>
+  .testimonials {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
 
   .testimonials h2{
     text-align: center;
@@ -74,16 +78,41 @@
 
 .testimonial-card {
   background-color: #fff;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 30px;
   margin-bottom: 40px;
-  width: 800px;
-  height: 150px;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+  width: auto;
+  height: auto;
+  animation: slide-left 0.5s ease-in-out forwards;
+  animation: slide-right 0.5s ease-in-out backwards;
 }
 
+/* .testimonial-card:nth-child(even) {
+  animation: slide-right 0.6s ease-in-out backwards;
+}
+
+.testimonial-card:nth-child(odd) {
+  animation: slide-left 0.5s ease-in-out forwards;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+} */
 .testimonial-card p {
   font-size: 24px;
   line-height: 28px;

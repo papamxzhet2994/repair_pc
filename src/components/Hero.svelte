@@ -31,35 +31,29 @@
   justify-content: center;
   align-items: center;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  /* animation: gradient 10s ease infinite; */
 }
-
-/* @keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-} */
   
-  .hero-inner {
-    text-align: center;
-    color: #ffffff;
+.hero-inner {
+  text-align: center;
+  color: #ffffff;
 }
 
 .hero h1 {
   font-size: 4rem;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 
 .hero p {
   font-size: 1.5rem;
   color: #fff;
   margin-bottom: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 
 
@@ -72,12 +66,15 @@
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 
 .hero .btn:hover {
   background-color: #630077;
   transform: translateY(-2px);
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
 }
+
 
 
 @media (max-width: 768px) {
