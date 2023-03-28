@@ -1,4 +1,16 @@
 <script>
+  import AddTestimonials from "./AddTestimonials.svelte";
+
+  let isOpen = false;
+
+  function openModal() {
+  isOpen = true;
+  }
+
+  function closeModal() {
+  isOpen = false;
+  }
+
   let current = 0;
 
   const testimonials = [
@@ -23,6 +35,8 @@
   function prevTestimonial() {
     current = (current - 1 + testimonials.length) % testimonials.length;
   }
+
+
 </script>
 
 <section id="testimonials" class="testimonials">
@@ -42,12 +56,16 @@
       <div class="buttons-container">
         <div class="buttons" style="text-align: center;">
           <button class="slide-left" on:click={prevTestimonial} disabled={current === 0}>Назад</button>
+          <button class="btn" on:click={openModal}>Добавить отзыв</button>
+          <AddTestimonials bind:isOpen={isOpen} onClose={closeModal}/>
           <button class="slide-right" on:click={nextTestimonial} disabled={current === testimonials.length - 1}>Вперед</button>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+ч
 
 <style>
   .testimonials {
@@ -82,37 +100,12 @@
   border-radius: 10px;
   padding: 30px;
   margin-bottom: 40px;
-  width: auto;
+  width: 900px;
   height: auto;
   animation: slide-left 0.5s ease-in-out forwards;
   animation: slide-right 0.5s ease-in-out backwards;
 }
 
-/* .testimonial-card:nth-child(even) {
-  animation: slide-right 0.6s ease-in-out backwards;
-}
-
-.testimonial-card:nth-child(odd) {
-  animation: slide-left 0.5s ease-in-out forwards;
-}
-
-@keyframes slide-left {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-right {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-} */
 .testimonial-card p {
   font-size: 24px;
   line-height: 28px;
@@ -173,6 +166,7 @@
     margin-top: auto;
   }
 }
+
 </style>
 
 

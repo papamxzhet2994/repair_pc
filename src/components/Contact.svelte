@@ -9,7 +9,7 @@
         <div class="social">
             <ul>
             <li><a href="https://vk.com/papamxzhet"><i class="fab fa-vk"></i></a></li>
-            <li><a href="https://github.com/papamxzhet2994"><i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://github.com/papamxzhet2994"><i class="fab fa-github"></i></a></li>
             </ul>
         </div>
     </div>
@@ -44,6 +44,7 @@ ul li {
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   background-color: #f5f5f5;
 }
+
 
 .contact-details {
   flex-basis: 45%;
@@ -150,12 +151,7 @@ label {
   
 }
 
-.checkbox{
-  display: flex;
-  align-items: center;
-  margin-right: 0.5rem;
-  font-size: 0.9rem;
-}
+
 
 @media screen and (max-width: 768px) {
   .contact-container {

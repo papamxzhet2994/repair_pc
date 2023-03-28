@@ -74,12 +74,12 @@
   }
 
   .scroll-top {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 2;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 

@@ -1,3 +1,15 @@
+<script>
+
+const moreInfoBtns = document.querySelectorAll('.more-info-btn');
+moreInfoBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const additionalInfo = btn.parentElement.querySelector('.additional-info');
+    additionalInfo.classList.toggle('hidden');
+  });
+});
+
+</script>
+
 <section id="services" class="services">
   <div class="container">
     <h2>Наши услуги</h2>
@@ -6,37 +18,43 @@
         <h3>Диагностика ПК</h3>
         <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
         <p>Бесплатная диагностика и оценка ремонта вашего ПК</p>
-        <button class="btn">Узнать больше</button>
+        <button class="btn more-info-btn">Узнать больше</button>
+        <p class="additional-info hidden">Дополнительная информация о услуге</p>
       </div>
       <div class="service-card">
         <h3>Ремонт</h3>
         <i class="fa-solid fa-screwdriver-wrench"></i>
         <p>Оказание услуг ремонта вашему комьютеров</p>
-        <button class="btn">Узнать больше</button>
+        <button class="btn more-info-btn">Узнать больше</button>
+        <p class="additional-info hidden">Дополнительная информация о услуге</p>
       </div>
       <div class="service-card">
         <h3>Настройка ПО</h3>
         <i class="fa-solid fa-gears"></i>
         <p>Установка, обновление и настройка ОС и ПО</p>
-        <button class="btn">Узнать больше</button>
+        <button class="btn more-info-btn">Узнать больше</button>
+        <p class="additional-info hidden">Дополнительная информация о услуге</p>
       </div>
       <div class="service-card">
         <h3>Удаленная поддержка</h3>
         <i class="fa-solid fa-desktop"></i>
         <p>Решение проблем с ПК удаленно через интернет</p>
-        <button class="btn">Узнать больше</button>
+        <button class="btn more-info-btn">Узнать больше</button>
+        <p class="additional-info hidden">Дополнительная информация о услуге</p>
       </div>
       <div class="service-card">
         <h3>Сборка компьютера</h3>
         <i class="fa-solid fa-hammer"></i>
         <p>Сборка ПК под ваши потребности и бюджет</p>
-        <button class="btn">Узнать больше</button>
+        <button class="btn more-info-btn">Узнать больше</button>
+        <p class="additional-info hidden">Дополнительная информация о услуге</p>
       </div>
       <div class="service-card">
         <h3>Обучение</h3>
         <i class="fa-solid fa-graduation-cap"></i>
         <p>Обучение основам работы с ПК и программами</p>
-        <button class="btn">Узнать больше</button>
+        <button class="btn more-info-btn">Узнать больше</button>
+        <p class="additional-info hidden">Дополнительная информация о услуге</p>
       </div>
     </div>
   </div>
@@ -142,6 +160,11 @@
     
 .service-card .btn:focus {
   outline: none;
+}
+
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 768px){

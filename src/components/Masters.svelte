@@ -38,6 +38,9 @@
   </section>
   
   <style>
+
+    
+
     .masters {
       text-align: center;
       background-color: #f5f5f5;
@@ -89,6 +92,10 @@
       color: #666;
       font-size: 18px;
       margin-bottom: 5px;
+    }
+
+    .master-card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 
     @media screen and (max-width: 768px) {

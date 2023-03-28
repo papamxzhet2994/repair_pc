@@ -1,5 +1,5 @@
 <script>
-  import Modal from './Modal.svelte';
+  import Repair from './Repair.svelte';
 
   let isOpen = false;
 
@@ -17,7 +17,7 @@
       <h1>Ремонт ПК</h1>
       <p>Качественный ремонт компьютеров и ноутбуков по доступным ценам</p>
       <button class="btn" on:click={openModal}>Заказать ремонт</button>
-      <Modal bind:isOpen={isOpen} onClose={closeModal}/>
+      <Repair bind:isOpen={isOpen} onClose={closeModal}/>
     </div>
 </section>
 
