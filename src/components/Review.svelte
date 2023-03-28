@@ -1,15 +1,5 @@
 <script>
-  import AddTestimonials from "./AddTestimonials.svelte";
-
-  let isOpen = false;
-
-  function openModal() {
-  isOpen = true;
-  }
-
-  function closeModal() {
-  isOpen = false;
-  }
+  import AddTestimonials from "./AddReview.svelte";
 
   let current = 0;
 
@@ -44,28 +34,31 @@
     <h2>Отзывы наших клиентов</h2>
     <div class="testimonial-cards">
       {#each testimonials as testimonial, i}
-        {#if i === current}
-          <div class="testimonial-card" style="display: block;">
-            <p>{testimonial.text}</p>
-            <div class="testimonial-author">{testimonial.author}</div>
-          </div>
+      {#if i === current}
+      <div class="testimonial-card" style="display: block;">
+        <p>{testimonial.text}</p>
+        <div class="testimonial-author">{testimonial.author}</div>
+      </div>
         {:else}
           <div class="testimonial-card" style="display: none;"></div>
-        {/if}
-      {/each}
-      <div class="buttons-container">
-        <div class="buttons" style="text-align: center;">
+          {/if}
+          {/each}
+          <div class="buttons-container">
+            <div class="buttons" style="text-align: center;">
           <button class="slide-left" on:click={prevTestimonial} disabled={current === 0}>Назад</button>
-          <button class="btn" on:click={openModal}>Добавить отзыв</button>
-          <AddTestimonials bind:isOpen={isOpen} onClose={closeModal}/>
           <button class="slide-right" on:click={nextTestimonial} disabled={current === testimonials.length - 1}>Вперед</button>
+        </div>
+        
+        <div class="add-testimonial-container">
         </div>
       </div>
     </div>
+    <AddTestimonials />
   </div>
 </section>
 
-ч
+
+
 
 <style>
   .testimonials {
@@ -150,6 +143,8 @@
 .buttons button:hover {
   background-color: #630077;
 }
+
+
 
 @media (max-width: 768px) {
   .testimonial-card {

@@ -71,7 +71,7 @@ input[type="tel"] {
   border-radius: 0.25rem;
   border: 1px solid #ccc;
   margin-bottom: 1rem;
-  width: 469px;
+  width: 468px;
 }
 
 
@@ -170,7 +170,7 @@ label {
 
   input[type="text"],
   input[type="tel"] {
-    width: 350px;
+    width: 341px;
   }
 
   .social {

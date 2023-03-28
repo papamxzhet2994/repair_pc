@@ -11,7 +11,6 @@
       <li><a href="#masters" use:scrollto={'#masters'}>Мастера</a></li>
       <li><a href="#testimonials" use:scrollto={'#testimonials'}>Отзывы</a></li>
       <li><a href="#contact" use:scrollto={'#contact'}>Контакты</a></li>
-      <li class="scroll-top"><a href="#hero" use:scrollto={'#hero'}><i class="fa-sharp fa-solid fa-arrow-up"></i></a></li>
     </ul>
   </nav>
 </header>
@@ -73,29 +72,7 @@
     transform: translateY(-2px); 
   }
 
-  .scroll-top {
-    position: fixed;
-    right: 16px;
-    bottom: 16px;
-    z-index: 2;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
 
-
-.scroll-top a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background-color: #333;
-  color: #fff;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 24px;
-  transition: all 0.3s ease-in-out;
-}
 
 
 
@@ -105,9 +82,7 @@
     display: none;
   }
 
-  .scroll-top {
-    display: none;
-  }
+
 
   .header {
     position: fixed;
