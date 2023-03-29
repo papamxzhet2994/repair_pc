@@ -26,6 +26,7 @@
   padding: 0 20px;
 }
 .about {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -61,8 +61,8 @@ moreInfoBtns.forEach(btn => {
 </section>
 
 <style>
-.services {
-  background-color: #f5f5f5;
+ .services {
+  /* background: linear-gradient(to bottom, rgba(138, 3, 165, 0) 0%, rgba(0, 4, 255, 0.541) 30%, rgb(93, 1, 136) 100%); */
   padding: 50px;
   display: flex;
   flex-direction: column;

@@ -1,19 +1,6 @@
 <section id="contact">
-<div class="contact-container">
-    <div class="contact-details">
-      <h2>Контакты</h2>
-      <p>Вы можете связаться с нами любым удобным способом или заказать звонок</p>
-      <p>г. Санкт-Петербург, ул. Садовая 6, Россия</p>
-      <p>Телефон: +7 (123) 456-7890</p>
-      <p>Email: example@example.com</p>
-        <div class="social">
-            <ul>
-            <li><a href="https://vk.com/papamxzhet"><i class="fab fa-vk"></i></a></li>
-            <li><a href="https://github.com/papamxzhet2994"><i class="fab fa-github"></i></a></li>
-            </ul>
-        </div>
-    </div>
     <div class="call-request">
+      <h1>Не нашли свою проблему в списке?</h1>
       <h2>Заказать звонок</h2>
       <form>
         <label for="name">*Имя:</label>
@@ -27,36 +14,22 @@
         <button type="submit">Отправить</button>
       </form>
     </div>
-  </div>
 </section>
 
 <style>
-ul li {
-    list-style-type: none;
-    display: inline;
-    margin: 20px;
-    
-}
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  background-color: #f5f5f5;
-}
-
-
-.contact-details {
-  flex-basis: 45%;
-  margin-left: 170px;
-}
 
 .call-request {
-  flex-basis: 45%;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 20px;
   margin-bottom: 1rem;
 }
 
@@ -154,15 +127,7 @@ label {
 
 
 @media screen and (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  .contact-details {
-    margin-left: 0;
-    margin-bottom: 2rem;
-  }
+
   .call-request {
     flex-basis: 100%;
 
@@ -171,20 +136,6 @@ label {
   input[type="text"],
   input[type="tel"] {
     width: 341px;
-  }
-
-  .social {
-    align-items: start;
-  }
-
-  .social ul {
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-
-  .social ul li {
-    margin-right: 1rem;
-  margin-bottom: 1rem;
   }
 
   .checkbox-wrapper {

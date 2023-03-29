@@ -19,23 +19,19 @@
       <button class="btn" on:click={openModal}>Заказать ремонт</button>
       <Repair bind:isOpen={isOpen} onClose={closeModal}/>
     </div>
+<img src="https://phonoteka.org/uploads/posts/2022-02/1645277293_39-phonoteka-org-p-remont-kompyuterov-fon-42.jpg" alt="img" >
 </section>
 
 <style>
-.hero{
-  height: 750px;
-  background: linear-gradient(to bottom ,rgb(153, 0, 196), rgb(63, 81, 181), rgb(33, 149, 243));
+.hero {
+  height: 770px;
+  background: linear-gradient(to left, rgba(118, 0, 196, 0.658), rgba(63, 81, 181, 0.733), rgba(33, 149, 243, 0.76));
   background-position: center;
   background-size: cover;
   display: flex;
-  justify-content: center;
+  justify-content: flex;
   align-items: center;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-}
-  
-.hero-inner {
-  text-align: center;
-  color: #ffffff;
 }
 
 .hero h1 {
@@ -45,24 +41,20 @@
   font-weight: 700;
   line-height: 1.2;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-}
-
-.hero p {
-  font-size: 1.5rem;
   color: #fff;
-  margin-bottom: 2rem;
-  font-weight: 300;
-  line-height: 1.2;
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 
+.hero-inner{
+  color: #fff;
+  margin-left: 50px;
+}
 
 .hero .btn {
   font-size: 1.25rem;
   padding: 1rem 2rem;
   background-color: #7e2291;
   color: #fff;
-  border: none;
+  border: 2px solid #7e2291;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -71,11 +63,25 @@
 
 .hero .btn:hover {
   background-color: #630077;
+  border-color: #630077;
   transform: translateY(-2px);
-  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
+img{
+  width: 50%;
+  height: 70%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-left: 350px;
+  transition: transform 0.2s ease-in-out;
+}
 
+img:hover {
+  transform: scale(1.01);
+}
 
 @media (max-width: 768px) {
   .hero {
