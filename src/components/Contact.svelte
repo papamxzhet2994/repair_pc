@@ -9,7 +9,7 @@
         <input type="tel" id="phone" name="phone" required>
         <div class="consent">
           <input type="checkbox" id="consent" name="consent" required class="checkbox1">
-          <label for="consent" class="checkbox-wrapper">Я даю согласие на обработку моих <a href="#"> персональных данных</a></label>
+          <label for="consent" class="checkbox-wrapper">Я даю согласие на обработку моих <a href="https://youtu.be/Qw36OnngxB0"> персональных данных</a></label>
         </div>
         <button type="submit">Отправить</button>
       </form>
