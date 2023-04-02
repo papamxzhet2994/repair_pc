@@ -9,7 +9,7 @@
         <input type="tel" id="phone" name="phone" required>
         <div class="consent">
           <input type="checkbox" id="consent" name="consent" required class="checkbox1">
-          <label for="consent" class="checkbox-wrapper">Я даю согласие на обработку моих персональных данных</label>
+          <label for="consent" class="checkbox-wrapper">Я даю согласие на обработку моих <a href="#"> персональных данных</a></label>
         </div>
         <button type="submit">Отправить</button>
       </form>
@@ -35,7 +35,6 @@ h2 {
 
 label {
   display: block;
-  margin-bottom: 0.5rem;
 }
 
 input[type="text"],
@@ -124,7 +123,9 @@ label {
   
 }
 
-
+a {
+  margin-left: 5px;
+}
 
 @media screen and (max-width: 768px) {
 

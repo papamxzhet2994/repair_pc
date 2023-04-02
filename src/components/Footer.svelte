@@ -10,54 +10,31 @@
       <p>г. Санкт-Петербург, ул. Садовая 6, Россия</p>
       <p>Телефон: +7 (123) 456-7890</p>
       <p>Email: example@example.com</p>
-      <div class="social">
-            <ul>
-            <li><a href="https://vk.com/papamxzhet"><i class="fab fa-vk"></i></a></li>
-            <li><a href="https://github.com/papamxzhet2994"><i class="fab fa-github"></i></a></li>
-            </ul>
-        </div>
     </div>
+      <ul class="scroll">
+        <li><a href="#hero" use:scrollto={'#hero'}><i class="fa-sharp fa-solid fa-arrow-up"></i></a></li>
+        <li><a href="https://vk.com/papamxzhet"><i class="fab fa-vk"></i></a></li>
+        <li><a href="https://github.com/papamxzhet2994"><i class="fab fa-telegram"></i></a></li>
+      </ul>
+    </div>
+  <div class="rules">
+      <p>© 2023 My Website. All rights reserved.</p>
   </div>
-  <div class="container">
-    <ul class="scroll">
-      <li><a href="#hero" use:scrollto={'#hero'}><i class="fa-sharp fa-solid fa-arrow-up"></i></a></li>
-    </ul>
-  </div>
-    <p>© 2023 My Website. All rights reserved.</p>
     
 </footer>
 
 <style>
-  p{
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-  
 
+  .rules {
+    color: #fff;
+    text-align: center;
   }
 
   footer {
-    background-color: #000000;
+    background-color: #55136e;
     padding: 10px;
   }
 
-  .container {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .scroll {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 16px;
-    bottom: 16px;
-    z-index: 2;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    list-style: none;
-  }
 
   .scroll a {
     display: flex;
@@ -99,6 +76,14 @@
   color: #333;
 }
 
+.scroll{
+  display: table-column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-left: auto;
+
+}
+
 @media screen and (max-width: 768px) {
   .contact-container {
     flex-direction: column;
@@ -109,18 +94,6 @@
     margin-left: 0;
     margin-bottom: 2rem;
   }
-  .social {
-    align-items: start;
-  }
 
-  .social ul {
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-
-  .social ul li {
-    margin-right: 1rem;
-  margin-bottom: 1rem;
-  }
 }
 </style>

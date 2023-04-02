@@ -85,7 +85,7 @@ moreInfoBtns.forEach(btn => {
 
 .service-card {
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 25px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   width: calc(33.33% - 20px);
   padding: 40px;
@@ -115,8 +115,6 @@ moreInfoBtns.forEach(btn => {
   line-height: 24px;
   margin-bottom: 30px;
 }
-
-
     
 .btn {
   background-color: #7e2291;
@@ -145,8 +143,6 @@ moreInfoBtns.forEach(btn => {
   outline: none;
 }
 
-
-    
 .service-card .btn {
   opacity: 0;
   transform: translateY(10px);
@@ -162,14 +158,13 @@ moreInfoBtns.forEach(btn => {
   outline: none;
 }
 
-
 .hidden {
   display: none;
 }
 
 @media (max-width: 768px){
   .service-card {
-  width: 100%;
+  width: 300px;
   margin-bottom: 30px;
 }
 
@@ -185,13 +180,13 @@ moreInfoBtns.forEach(btn => {
 }
 
 .service-card p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 20px;
   margin-bottom: 30px;
 }
 
 .btn {
-  font-size: 14px;
+  font-size: 16px;
   padding: 10px 20px;
   margin-top: auto;
 }

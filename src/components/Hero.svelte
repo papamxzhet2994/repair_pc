@@ -100,11 +100,17 @@ img:hover {
   .hero .btn {
     font-size: 1rem;
     padding: 0.5rem 1rem;
+    border-radius: 10px;
+
   }
 
   .hero-inner {
-    text-align: center;
+    margin:auto;
     color: #ffffff;
+    text-align: center;
+  }
+  img{
+    display: none;
   }
 }
 </style>
