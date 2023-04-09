@@ -3,7 +3,7 @@
 </script>
 
 <header class="header">
-  <a href="/" class="logo">Ремонт компьютеров</a>
+  <a href="/" class="logo">PC Rescuer</a>
   <nav>
     <ul class="nav-links">
       <li><a href="#services" use:scrollto={'#services'}>Услуги</a></li>
@@ -11,6 +11,7 @@
       <li><a href="#masters" use:scrollto={'#masters'}>Мастера</a></li>
       <li><a href="#testimonials" use:scrollto={'#testimonials'}>Отзывы</a></li>
       <li><a href="#contact" use:scrollto={'#contact'}>Контакты</a></li>
+      <li><a href="#">Новости</a></li>
     </ul>
   </nav>
 </header>
@@ -30,6 +31,7 @@
     font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: auto;
    }
 
   .logo {
@@ -40,6 +42,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 1px;
+    padding-left: 50px;
   }
 
 .nav-links {

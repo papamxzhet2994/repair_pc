@@ -71,9 +71,9 @@
   justify-content: flex-start;
   margin-left: 20px;
   margin-bottom: 20px;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 16px;
   color: #333;
+  line-height: 1;
 }
 
 .scroll{
@@ -82,6 +82,10 @@
   align-items: flex-end;
   margin-left: auto;
 
+}
+
+.scroll a:hover { 
+  color: #9700bd;
 }
 
 @media screen and (max-width: 768px) {

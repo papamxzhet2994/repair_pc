@@ -1,38 +1,61 @@
 <script>
-    export let isOpen = false;
-    export let onClose;
-  
-    function closeModal() {
-      isOpen = false;
-      onClose();
-    }
-  </script>
-  
-  {#if isOpen}
-  <div class="modal" class:modal-open={isOpen}>
-      <div class="modal-content">
-        <slot>
-            <h2>Заказать ремонт</h2>
-            <form>
-              <label>
-                Имя:
-                <input type="text" name="name" />
-              </label>
-              <label>
-                Email:
-                <input type="email" name="email" />
-              </label>
-              <label>
-                Проблема:
-                <textarea name="problem"></textarea>
-              </label>
-              <button class="send">Отправить</button>
-            </form>
-        </slot>
-        <button class="close" on:click={closeModal}><i class="fa-sharp fa-solid fa-xmark"></i></button>
-      </div>
-      </div>
-  {/if}
+  export let isOpen = false;
+  export let onClose;
+
+  function closeModal() {
+    isOpen = false;
+    onClose();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch('/sendmail', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(result => {
+        alert(result);
+        form.reset();
+      })
+      .catch(error => {
+        console.error(error);
+      })
+    })
+  });
+</script>
+
+{#if isOpen}
+<div class="modal" class:modal-open={isOpen}>
+  <div class="modal-content">
+    <slot>
+      <h2>Заказать ремонт</h2>
+      <form>
+        <label>
+          Имя:
+          <input type="text" name="name" required/>
+        </label>
+        <label>
+          Email:
+          <input type="email" name="email" required/>
+        </label>
+        <label>
+          Проблема:
+          <textarea name="problem" required></textarea>
+        </label>
+        <button class="send" type="submit">Отправить</button>
+      </form>
+    </slot>
+    <button class="close" on:click={closeModal}><i class="fa-sharp fa-solid fa-xmark"></i></button>
+  </div>
+</div>
+{/if}
   
 
 <style>

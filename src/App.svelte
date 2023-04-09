@@ -8,7 +8,7 @@
     import Footer from './components/Footer.svelte';
     import Masters from './components/Masters.svelte';
 </script>
-  
+
   <Header/>
   <main>
     <Hero/>
