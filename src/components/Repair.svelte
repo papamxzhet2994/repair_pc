@@ -1,4 +1,28 @@
 <script>
+  import supabase from "../../supabase.js";
+
+  let name = "";
+  let email = "";
+  let problem = "";
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const {data, error} = await supabase.from("repair").insert([
+      {
+        name: name,
+        email: email,
+        problem: problem
+      }
+    ]);
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Успешно отправлено");
+      name = "";
+      email = "";
+      problem = "";
+    }
+  }
   export let isOpen = false;
   export let onClose;
 
@@ -7,54 +31,34 @@
     onClose();
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
 
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-
-      fetch('/sendmail', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.text())
-      .then(result => {
-        alert(result);
-        form.reset();
-      })
-      .catch(error => {
-        console.error(error);
-      })
-    })
-  });
 </script>
 
 {#if isOpen}
-<div class="modal" class:modal-open={isOpen}>
-  <div class="modal-content">
-    <slot>
-      <h2>Заказать ремонт</h2>
-      <form>
-        <label>
-          Имя:
-          <input type="text" name="name" required/>
-        </label>
-        <label>
-          Email:
-          <input type="email" name="email" required/>
-        </label>
-        <label>
-          Проблема:
-          <textarea name="problem" required></textarea>
-        </label>
-        <button class="send" type="submit">Отправить</button>
-      </form>
-    </slot>
-    <button class="close" on:click={closeModal}><i class="fa-sharp fa-solid fa-xmark"></i></button>
+  <div class="modal" class:modal-open={isOpen}>
+    <div class="modal-content">
+      <slot>
+        <h2>Заказать ремонт</h2>
+        <form on:submit={handleSubmit}>
+          <label>
+            Имя:
+            <input type="text" name="name" required bind:value={name}/>
+          </label>
+          <label>
+            Email:
+            <input type="email" name="email" required bind:value={email}/>
+          </label>
+          <label>
+            Проблема:
+            <textarea name="problem" required bind:value={problem}></textarea>
+          </label>
+          <button class="send" type="submit">Отправить</button>
+        </form>
+      </slot>
+      <button class="close" on:click={closeModal}><i class="fa-sharp fa-solid fa-xmark"></i></button>
+    </div>
   </div>
-</div>
+  closeModal();
 {/if}
   
 
