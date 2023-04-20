@@ -11,7 +11,6 @@
       <li><a href="#masters" use:scrollto={'#masters'}>Мастера</a></li>
       <li><a href="#testimonials" use:scrollto={'#testimonials'}>Отзывы</a></li>
       <li><a href="#contact" use:scrollto={'#contact'}>Контакты</a></li>
-      <li><a href="#">Новости</a></li>
     </ul>
   </nav>
 </header>
@@ -42,7 +41,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 1px;
-    padding-left: 50px;
   }
 
 .nav-links {

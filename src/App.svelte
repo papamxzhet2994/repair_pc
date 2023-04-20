@@ -16,6 +16,6 @@
     <About/>
     <Masters/>
     <Review/>
-    <Contact/>
+    <!-- <Contact/> -->
   </main>
   <Footer/>

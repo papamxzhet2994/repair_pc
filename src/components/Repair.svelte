@@ -1,10 +1,17 @@
 <script>
+// @ts-nocheck
+
   import supabase from "../../supabase.js";
+  import swal from 'sweetalert';
+
 
   let name = "";
   let email = "";
   let problem = "";
 
+  /**
+     * @param {{ preventDefault: () => void; }} event
+     */
   async function handleSubmit(event) {
     event.preventDefault();
     const {data, error} = await supabase.from("repair").insert([
@@ -16,11 +23,22 @@
     ]);
     if (error) {
       console.log(error);
+      closeModal();
     } else {
       console.log("Успешно отправлено");
       name = "";
       email = "";
       problem = "";
+      closeModal();
+      swal({
+        title: "Успешно",
+        text: "Мы рассмотрим вашу заявку в скором времени!",
+        icon: "success",
+        button: {
+          text: "Закрыть",
+          color: "#f5f5f5",
+        }
+});
     }
   }
   export let isOpen = false;
@@ -58,7 +76,6 @@
       <button class="close" on:click={closeModal}><i class="fa-sharp fa-solid fa-xmark"></i></button>
     </div>
   </div>
-  closeModal();
 {/if}
   
 
