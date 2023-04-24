@@ -2,7 +2,7 @@
   import { scrollto } from "svelte-scrollto";
 </script>
 
-<footer>
+<footer id="footer">
     <div class="contact-container">
       <div class="contact-details">
       <h2>Контакты</h2>

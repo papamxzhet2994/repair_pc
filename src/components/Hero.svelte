@@ -69,14 +69,13 @@
 }
 
 img{
+  display: block;
+  margin: auto;
   width: 50%;
   height: 70%;
   object-fit: cover;
-  object-position: center;
+  transition: all 0.2s ease-in-out;
   border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin-left: 350px;
-  transition: transform 0.2s ease-in-out;
 }
 
 img:hover {

@@ -10,7 +10,7 @@
       <li><a href="#about" use:scrollto={'#about'}>О нас</a></li>
       <li><a href="#masters" use:scrollto={'#masters'}>Мастера</a></li>
       <li><a href="#testimonials" use:scrollto={'#testimonials'}>Отзывы</a></li>
-      <li><a href="#contact" use:scrollto={'#contact'}>Контакты</a></li>
+      <li><a href="#footer" use:scrollto={'#footer'}>Контакты</a></li>
     </ul>
   </nav>
 </header>

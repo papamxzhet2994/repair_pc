@@ -1,15 +1,37 @@
 <script>
     export let onClose;
+    export let closeModal;
+    import supabase from "../../supabase";
+    import swal from "sweetalert";
     
     let name = '';
     let review = '';
     
-    function handleSubmit(event) {
-      event.preventDefault();
-      // Do something with name and review data, such as submitting it to a server
-      onClose();
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const {data, error} = await supabase.from("review").insert([
+      {
+        name: name,
+        review: review
+      }
+    ]);
+    if (error) {
+      console.log(error);
+      closeModal();
+    } else {
+      console.log("Успешно отправлено");
+      name = "";
+      review = "";
+      swal({
+        title: "Успешно",
+        text: "Спасибо за ваш отзыв!",
+        icon: "success",
+      });
     }
-    
+    closeModal();
+  }
+
+
     function handleCancel() {
       onClose();
     }
