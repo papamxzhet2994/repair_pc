@@ -1,6 +1,6 @@
 <script>
   import supabase from "../../supabase";
-import AddReview from "./AddReview.svelte";
+  import AddReview from "./AddReview.svelte";
 
 let current = 0;
 

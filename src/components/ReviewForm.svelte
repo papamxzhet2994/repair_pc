@@ -6,6 +6,19 @@
     
     let name = '';
     let review = '';
+
+    async function getReviews() {
+    let { data: review, error } = await supabase
+      .from('review')
+      .select('*')
+
+    if (error) {
+      console.log(error);
+      return [];
+    } else {
+      return review;
+    }
+  }
     
   async function handleSubmit(event) {
     event.preventDefault();
@@ -27,6 +40,7 @@
         text: "Спасибо за ваш отзыв!",
         icon: "success",
       });
+      loadReviews();
     }
     closeModal();
   }
@@ -35,8 +49,24 @@
     function handleCancel() {
       onClose();
     }
+
+    async function loadReviews() {
+    const reviews = await getReviews();
+    const container = document.getElementById("reviews-container");
+    container.innerHTML = "";
+    reviews.forEach((review) => {
+      const reviewEl = document.createElement("div");
+      reviewEl.innerHTML = `
+        <h3>${review.name}</h3>
+        <p>${review.review}</p>
+      `;
+      container.appendChild(reviewEl);
+    });
+  }
+
+  loadReviews();
   </script>
-  
+  <div class="reviews-container">
   <div class="modal" class:modal-open={true}>
     <div class="modal-content">
       <h2>Добавить отзыв</h2>
@@ -54,6 +84,7 @@
       </form>
     </div>
   </div>
+</div>
 
   <style>
 
