@@ -16,88 +16,72 @@
         <li><a href="https://vk.com/papamxzhet"><i class="fab fa-vk"></i></a></li>
         <li><a href="https://github.com/papamxzhet2994"><i class="fab fa-github"></i></a></li>
       </ul>
-    </div>
-  <div class="rules">
-      <p>© 2023 My Website. All rights reserved.</p>
-  </div>
-    
+    </div>  
 </footer>
+<div class="rule">
+  <p>© 2023 My Website. Все права защищены.</p>
+</div>
 
 <style>
-
-  .rules {
-    color: #fff;
-    text-align: center;
-  }
-
-  footer {
-    background-color: #55136e;
-    padding: 10px;
-  }
-
-
-  .scroll a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 24px;
-    transition: all 0.3s ease-in-out;
-  }
-
-  ul li {
-    list-style-type: none;
-    display: inline;
-    margin: 20px;
+#footer {
+  background-color: #f2f2f2;
+  padding: 20px;
 }
+
 .contact-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  background-color: #f5f5f5;
-  padding: 20px;
-  margin-bottom: 20px;
-  
+  justify-content: space-between;
+  align-items: center;
 }
 
+.contact-details h2 {
+  text-align: flex-start;
+  font-size: 24px;
+}
 
-.contact-details {  
-  justify-content: flex-start;
-  margin-left: 20px;
-  margin-bottom: 20px;
+.contact-details p {
+  font-size: 18px;
+  line-height: normal;
+}
+
+.scroll li {
+  margin-left: 10px;
+  list-style: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.scroll li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #810791;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.scroll li a:hover {
+  background-color: #61056d;
+}
+
+.scroll li a i {
+  color: #ffffff;
   font-size: 16px;
-  color: #333;
-  line-height: 1;
 }
 
-.scroll{
-  display: table-column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin-left: auto;
 
+.rule {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.scroll a:hover { 
-  color: #9700bd;
+.rule p {
+  font-size: 14px;
+  color: #666;
 }
 
-@media screen and (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  .contact-details {
-    margin-left: 0;
-    margin-bottom: 2rem;
-  }
-
-}
 </style>

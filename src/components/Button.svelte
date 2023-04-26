@@ -21,7 +21,7 @@
 }
 
 .btn {
-  display: inline-block;
+  position: absolute ;
   background-color: #7e2291;
   color: #fff;
   padding: 10px 30px;
@@ -30,7 +30,6 @@
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 10px;
 }
 
 .btn:hover {
