@@ -1,6 +1,20 @@
 <script>
-
+  import ServecesInfo from "./ServecesInfo.svelte";
+  
+  let title = "Заголовок";
+  let content = "Содержимое модального окна";
+  
+  let modalOpen = false;
+  
+  function closeModal() {
+    modalOpen = false;
+  }
+  
+  function openModal() {
+    modalOpen = true;
+  }
 </script>
+
 <section id="services" class="services">
   <div class="container">
     <h2>Наши услуги</h2>
@@ -9,7 +23,7 @@
         <h3>Диагностика ПК</h3>
         <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
         <p>Бесплатная диагностика и оценка ремонта вашего ПК</p>
-        <button class="btn more-info-btn">Узнать больше</button>
+        <button class="btn more-info-btn" on:click={openModal}><ServecesInfo title={title} content={content} on:click={closeModal} /></button>
       </div>
       <div class="service-card">
         <h3>Ремонт</h3>

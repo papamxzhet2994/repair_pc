@@ -9,7 +9,7 @@
       <li><a href="#services" use:scrollto={'#services'}>Услуги</a></li>
       <li><a href="#about" use:scrollto={'#about'}>О нас</a></li>
       <li><a href="#masters" use:scrollto={'#masters'}>Мастера</a></li>
-      <li><a href="#testimonials" use:scrollto={'#testimonials'}>Отзывы</a></li>
+      <li><a href="#review" use:scrollto={'#review'}>Отзывы</a></li>
       <li><a href="#footer" use:scrollto={'#footer'}>Контакты</a></li>
     </ul>
   </nav>
