@@ -51,7 +51,13 @@
           font-weight: bold;
           margin-top: 20px;
         }
-
+        @media screen and (max-width: 768px) {
+          .review-card {
+            width: 250px;
+            height: auto;
+            max-width: 100%;
+          }
+        }
         </style>
       `;
       container.appendChild(reviewEl);
@@ -86,10 +92,6 @@
     </div>
   </div>
 </section>
-
-
-
-
 
 <style>
   .review {
@@ -155,12 +157,11 @@
     margin-bottom: 20px;
   }
   @media (max-width: 768px) {
-    /* .review-card {
+    .review {
+      margin-top: 50px;
+      margin-bottom: 50px;
       width: 100%;
-      height: auto;
-      padding: 20px;
-      text-align: center;
-    } */
+    }
   
     .buttons {
       position: relative;

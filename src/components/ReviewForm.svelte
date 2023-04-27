@@ -29,8 +29,8 @@
         text: "Спасибо за ваш отзыв!",
         icon: "success",
       });
+      closeModal();
     }
-    closeModal();
   }
 
 

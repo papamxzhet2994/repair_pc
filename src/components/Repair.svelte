@@ -1,17 +1,19 @@
 <script>
-// @ts-nocheck
-
   import supabase from "../../supabase.js";
   import swal from 'sweetalert';
+  export let isOpen = false;
+  export let onClose;
+  
+  function closeModal() {
+    isOpen = false;
+    onClose();
+  }
 
 
   let name = "";
   let email = "";
   let problem = "";
 
-  /**
-     * @param {{ preventDefault: () => void; }} event
-     */
   async function handleSubmit(event) {
     event.preventDefault();
     const {data, error} = await supabase.from("repair").insert([
@@ -36,13 +38,6 @@
         icon: "success",
 });
     }
-  }
-  export let isOpen = false;
-  export let onClose;
-
-  function closeModal() {
-    isOpen = false;
-    onClose();
   }
 
 

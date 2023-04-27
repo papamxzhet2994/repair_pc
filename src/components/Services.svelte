@@ -1,3 +1,6 @@
+<script>
+
+</script>
 <section id="services" class="services">
   <div class="container">
     <h2>Наши услуги</h2>

@@ -84,4 +84,23 @@
   color: #666;
 }
 
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rule {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .scroll {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+  }
+}
 </style>
