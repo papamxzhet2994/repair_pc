@@ -19,7 +19,7 @@
     </div>  
 </footer>
 <div class="rule">
-  <p>© 2023 My Website. Все права защищены.</p>
+  <p>© 2023 PC Rescuer. Все права защищены.</p>
 </div>
 
 <style>

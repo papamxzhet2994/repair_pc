@@ -57,6 +57,7 @@
   float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .close:hover,
@@ -121,6 +122,33 @@ a {
   transition: background-color 0.3s ease;
   margin-top: auto;
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .modal{
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+  }
+
+  .modal-content{
+    height: 270px;
+    background-color: #f5f5f5;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 600px;
+    border-radius: 30px;
+    color: black;
+    width: 268px;
+    overflow: auto;
+
+  }
+
+  .btn {
+    opacity: 1;
+  }
+
 }
   </style>
   
