@@ -146,6 +146,10 @@
     margin: 0 10px;
   }
   
+  .buttons button:active {
+    transform: scale(0.95);
+  }
+
   .buttons button:hover {
     background-color: #630077;
   }

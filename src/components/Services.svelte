@@ -1,8 +1,6 @@
 <script>
   import ServecesInfo from "./ServecesInfo.svelte";
   
-  let title = "Заголовок";
-  let content = "Содержимое модального окна";
   
   let modalOpen = false;
   
@@ -39,6 +37,7 @@
         <h3>Сборка компьютера</h3>
         <i class="fa-solid fa-hammer"></i>
         <ServecesInfo title="Сборка компьютера" content="Мы предоставляем услуги сборки компьютера под ваши индивидуальные потребности и бюджет." on:click={closeModal}/>
+       
       </div>
       <div class="service-card" style="background-image: url('https://static.baza.farpost.ru/v/1601900790523_bulletin')">
         <h3>Обучение</h3>
@@ -127,11 +126,6 @@ i {
   margin-bottom: 20px;
 }
 
-.service-card p {
-  font-size: 18px;
-  line-height: 20px;
-  margin-bottom: 30px;
-}
 
 .service-cards {
   margin-top: 30px;
