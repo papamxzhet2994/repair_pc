@@ -3,7 +3,6 @@
     export let title = "";
     export let content = "";
     export let isOpen = false;
-    export let showModal;
     
     function closeModal() {
       isOpen = false;
@@ -11,7 +10,6 @@
     
     function openModal() {
       isOpen = true;
-      showModal();
     }
   </script>
   
