@@ -12,7 +12,7 @@
     }
   </script>
   
-  <button on:click={openModal}>Узнать больше</button>
+  <button class="btn" on:click={openModal}>Узнать больше</button>
   
   {#if isOpen}
   <div class="modal" on:keydown={closeModal}>
@@ -61,5 +61,48 @@
       text-decoration: none;
       cursor: pointer;
     }
+
+    .btn {
+  background-color: #7e2291;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+}
+    
+.btn:hover {
+  background-color: #630077;
+}
+    
+ .btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+  
+.btn:focus {
+  outline: none;
+}
+
+.btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #7e2291;
+  opacity: 1;
+}
+
+.btn:focus {
+  outline: none;
+}
+
   </style>
   
