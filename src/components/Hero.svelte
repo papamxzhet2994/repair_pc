@@ -24,7 +24,7 @@
 <style>
 .hero {
   height: 770px;
-  background: linear-gradient(to left, rgba(118, 0, 196, 0.658), rgba(63, 81, 181, 0.733), rgba(33, 149, 243, 0.76)), url('https://phonoteka.org/uploads/posts/2022-02/1645277293_39-phonoteka-org-p-remont-kompyuterov-fon-42.jpg');
+  background: linear-gradient(to left, rgba(118, 0, 196, 0.459), rgba(63, 81, 181, 0.863), rgb(33, 149, 243)), url('https://phonoteka.org/uploads/posts/2022-02/1645277293_39-phonoteka-org-p-remont-kompyuterov-fon-42.jpg');
   background-position: left;
   background-size: cover;
   display: flex;
