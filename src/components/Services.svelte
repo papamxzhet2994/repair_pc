@@ -48,6 +48,7 @@
   </div>
 </section>
 
+
 <style>
  .services {
   padding: 50px;
@@ -89,9 +90,9 @@
   background-size: cover
 }
 
-.service-card:hover {
+/* .service-card:hover {
   transform: translateY(-5px);
-}
+} */
   
 .service-card h3 {
   font-size: 24px;
@@ -99,6 +100,26 @@
   background-color: rgb(113, 0, 158);
   color: #fff;
 }
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+.service-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.349);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.service-card:hover:before {
+  opacity: 1;
+}
+
 
 i {
   font-size: 70px;

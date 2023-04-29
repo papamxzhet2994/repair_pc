@@ -19,20 +19,21 @@
       <button class="btn" on:click={openModal}>Заказать ремонт</button>
       <Repair bind:isOpen={isOpen} onClose={closeModal}/>
     </div>
-<img src="https://phonoteka.org/uploads/posts/2022-02/1645277293_39-phonoteka-org-p-remont-kompyuterov-fon-42.jpg" alt="img" >
 </section>
 
 <style>
 .hero {
   height: 770px;
-  background: linear-gradient(to left, rgba(118, 0, 196, 0.658), rgba(63, 81, 181, 0.733), rgba(33, 149, 243, 0.76));
-  background-position: center;
+  background: linear-gradient(to left, rgba(118, 0, 196, 0.658), rgba(63, 81, 181, 0.733), rgba(33, 149, 243, 0.76)), url('https://phonoteka.org/uploads/posts/2022-02/1645277293_39-phonoteka-org-p-remont-kompyuterov-fon-42.jpg');
+  background-position: left;
   background-size: cover;
   display: flex;
   justify-content: flex;
   align-items: center;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  
 }
+
 
 .hero h1 {
   font-size: 4rem;
@@ -48,6 +49,7 @@
   color: #fff;
   margin-left: 50px;
 }
+
 
 .hero .btn {
   font-size: 1.25rem;
@@ -68,19 +70,6 @@
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-img{
-  display: block;
-  margin: auto;
-  width: 50%;
-  height: 70%;
-  object-fit: cover;
-  transition: all 0.2s ease-in-out;
-  border-radius: 30px;
-}
-
-img:hover {
-  transform: scale(1.01);
-}
 
 @media (max-width: 768px) {
   .hero {
@@ -107,9 +96,6 @@ img:hover {
     margin:auto;
     color: #ffffff;
     text-align: center;
-  }
-  img{
-    display: none;
   }
 }
 </style>

@@ -4,13 +4,17 @@
     export let content = "";
     export let isOpen = false;
     
-    function closeModal() {
-      isOpen = false;
-    }
+function openModal() {
+  isOpen = true;
+  document.body.style.overflow = 'hidden';
+}
+
     
-    function openModal() {
-      isOpen = true;
-    }
+function closeModal() {
+  isOpen = false;
+  document.body.style.overflow = 'auto';
+}
+
   </script>
   
   <button class="btn" on:click={openModal}>Узнать больше</button>
@@ -29,7 +33,7 @@
   
   <style>
 .modal {
-  display: block;
+  display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -51,6 +55,7 @@
   border-radius: 30px;
   color: black;
 }
+
 
 .close {
   color: #aaa;
@@ -122,6 +127,9 @@ a {
   transition: background-color 0.3s ease;
   margin-top: auto;
   text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  margin-top: auto; 
 }
 
 @media (max-width: 768px) {
