@@ -1,5 +1,6 @@
 <script>
-  import Repair from './Repair.svelte';
+    import Profile from './Profile.svelte';
+import Repair from './Repair.svelte';
 
   let isOpen = false;
 
@@ -12,12 +13,13 @@
   }
 </script>
 
+
 <section class="hero">
-    <div class="hero-inner">
-      <h1>Ремонт ПК</h1>
-      <p>Качественный ремонт компьютеров и ноутбуков по доступным ценам</p>
-      <button class="btn" on:click={openModal}>Заказать ремонт</button>
-      <Repair bind:isOpen={isOpen} onClose={closeModal}/>
+  <div class="hero-inner">
+    <h1>Ремонт ПК</h1>
+    <p>Качественный ремонт компьютеров и ноутбуков по доступным ценам</p>
+    <button class="btn" on:click={openModal}>Заказать ремонт</button>
+    <Repair bind:isOpen={isOpen} onClose={closeModal}/>
     </div>
 </section>
 
@@ -69,6 +71,7 @@
   transform: translateY(-2px);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
+
 
 
 @media (max-width: 768px) {
