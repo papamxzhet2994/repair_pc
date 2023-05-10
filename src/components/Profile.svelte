@@ -42,26 +42,46 @@
     }
   
     async function signUp() {
-      const { data, error }  = await supabase.auth.signUp({
-        email,
-        password,
-      });
-  
-      if (error) {
-        console.error(error);
-      } else {
-        console.log(firstName, lastName);
-        await supabase.from("users").insert([
-          {
-            email,
-            firstName,
-            lastName,
-          },
-        ]);
-        loggedIn = true;
-        saveToLocalStorage();
-      }
+  const { data: users, error } = await supabase
+    .from("users")
+    .select()
+    .eq("email", email);
+
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  if (users && users.length > 0) {
+    swal(
+      "Пользователь уже зарегистрирован",
+      "Попробуйте войти с помощью своего пароля",
+      "warning"
+    );
+  } else {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    if (error) {
+      console.error(error);
+    } else {
+      console.log(firstName, lastName);
+      await supabase.from("users").insert([
+        {
+          email,
+          password,
+          firstName,
+          lastName,
+        },
+      ]);
+      loggedIn = true;
+      saveToLocalStorage();
     }
+  }
+}
+
   
     async function logout() {
       const { error } = await supabase.auth.signOut();
@@ -85,13 +105,26 @@
 }
 checkAuth();
   
+
+function showModal(id) {
+  const modal = document.getElementById(id);
+  modal.showModal();
+
+  modal.addEventListener('close', () => {
+    modal.removeAttribute('open');
+  });
+}
   </script>
 
-
 {#if !loggedIn}
+<button on:click={() => showModal('login-dialog')}>Войти или зарегистрироваться</button>
 <div class="form-container">
+  <dialog id="login-dialog">
+    <div class="form-container">
+      <i onclick="document.getElementById('login-dialog').close()" class="fas fa-times"></i>
     <h2>Войти или зарегистрироваться</h2>
     <form on:submit|preventDefault={signIn}>
+      <h1>Войти</h1>
       <div class="form-group">
         <label>Email:
             <input type="email" bind:value={email} required />
@@ -105,6 +138,7 @@ checkAuth();
       <button type="submit">Войти</button>
     </form>
     <form on:submit|preventDefault={signUp}>
+      <h1>Зарегистрироваться</h1>
       <div class="form-group">
         <label>Имя:
             <input type="text" bind:value={firstName} required />
@@ -127,66 +161,94 @@ checkAuth();
       </div>
       <button type="submit">Зарегистрироваться</button>
     </form>
-  </div>  
+  </div>
+</dialog>
+</div>  
 {:else}
-<h1>{lastName} {firstName}</h1>
-<button on:click={logout}>Выйти</button>
+<div class="logged">
+  <h1>{lastName} {firstName}</h1>
+  <button on:click={logout}>Выйти</button>
+</div>
 {/if}
 
+
 <style>
-.form-container {
-  width: 400px;
-  margin: 0;
-  background-color: #f5f5f5;
-  border-radius: 5px;
-  padding: 20px;
-  position: absolute;
+dialog {
+  top: 0;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-form {
+  width: 500px;
+  height: 100%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  background-color: white;
+  z-index: 10;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
 }
 
 .form-group {
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 label {
-  margin-right: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
 }
 
+input[type="text"],
 input[type="email"],
-input[type="password"],
-input[type="text"] {
-  padding: 8px;
+input[type="password"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
   border-radius: 5px;
-  border: none;
-  margin-top: 5px;
+  width: 100%;
   margin-bottom: 10px;
 }
 
-button {
-  background-color: #0074d9;
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #5cb85c;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #5cb85c;
   color: #fff;
   border: none;
   border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #449d44;
+}
+
+/* Стили для кнопки "Войти или зарегистрироваться" */
+button {
   padding: 10px;
-  margin-top: 10px;
+  font-size: 16px;
+  background-color: #5cb85c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #3d80e4;
+  background-color: #449d44;
 }
+
 
 
 </style>

@@ -136,12 +136,6 @@ i {
   margin-bottom: 30px;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  background-image: linear-gradient(to bottom, rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243)), url("");
-  color: #fff;
-}
-
 .service-card h3 {
   font-size: 20px;
   margin-bottom: 20px;

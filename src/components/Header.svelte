@@ -12,6 +12,8 @@
       <li><a href="#masters" use:scrollto={'#masters'}>Мастера</a></li>
       <li><a href="#review" use:scrollto={'#review'}>Отзывы</a></li>
       <li><a href="#footer" use:scrollto={'#footer'}>Контакты</a></li>
+      <li><a href="#profile" target="_blank">Login</a></li>
+
     </ul>
   </nav>
 </header>

@@ -1,5 +1,4 @@
 <script>
-    import Profile from './Profile.svelte';
 import Repair from './Repair.svelte';
 
   let isOpen = false;
@@ -11,6 +10,8 @@ import Repair from './Repair.svelte';
   function closeModal() {
     isOpen = false;
   }
+
+
 </script>
 
 
