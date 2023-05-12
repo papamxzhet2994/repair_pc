@@ -44,6 +44,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 1px;
+    margin-left: 20px;
   }
 
 .nav-links {
@@ -54,6 +55,7 @@
   .nav-links li {
     list-style: none;
     margin: 20px;
+    display: block;
   }
 
   .nav-links li:last-child {

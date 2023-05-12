@@ -1,51 +1,68 @@
 <script>
-    import swal from "sweetalert";
-    import supabase from "../../supabase";
-  
-    let email = "";
-    let password = "";
-    let firstName = "";
-    let lastName = "";
-    let loggedIn = false;
-  
-    // Сохранение данных в LocalStorage
-    function saveToLocalStorage() {
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password);
-      localStorage.setItem("firstName", firstName);
-      localStorage.setItem("lastName", lastName);
-      localStorage.setItem('loggedIn', loggedIn.toString());
+import swal from "sweetalert";
+import supabase from "../../supabase";
+
+let email = "";
+let password = "";
+let firstName = "";
+let lastName = "";
+let loggedIn = false;
+
+// Сохранение данных в LocalStorage
+function saveToLocalStorage() {
+  localStorage.setItem("email", email);
+  localStorage.setItem("password", password);
+  localStorage.setItem("firstName", firstName);
+  localStorage.setItem("lastName", lastName);
+  localStorage.setItem('loggedIn', loggedIn.toString());
+}
+
+// Загрузка данных из LocalStorage
+function loadFromLocalStorage() {
+  email = localStorage.getItem("email") || "";
+  password = localStorage.getItem("password") || "";
+  firstName = localStorage.getItem("firstName") || "";
+  lastName = localStorage.getItem("lastName") || "";
+  loggedIn = localStorage.getItem("loggedIn") === "true";
+}
+
+loadFromLocalStorage();
+
+async function signIn() {
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+  if (error) {
+    swal(
+      "Ошибка", 
+      "Неверный логин или пароль", 
+      "error"
+    )
+  } else {
+    // Fetch user details from the database and update local storage
+    const { data: users, error } = await supabase
+      .from("users")
+      .select()
+      .eq("email", email);
+
+    if (error) {
+      console.error(error);
+      return;
     }
-  
-    // Загрузка данных из LocalStorage
-    function loadFromLocalStorage() {
-      email = localStorage.getItem("email") || "";
-      password = localStorage.getItem("password") || "";
-      firstName = localStorage.getItem("firstName") || "";
-      lastName = localStorage.getItem("lastName") || "";
-      loggedIn = localStorage.getItem("loggedIn") === "true";
+
+    if (users && users.length > 0) {
+      firstName = users[0].firstName;
+      lastName = users[0].lastName;
+      saveToLocalStorage();
     }
-  
-    loadFromLocalStorage();
-  
-    async function signIn() {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-      if (error) {
-        swal(
-          "Ошибка", 
-          "Неверный логин или пароль", 
-          "error"
-          )
-      } else {
-        loggedIn = true;
-        saveToLocalStorage();
-      }
-    }
-  
-    async function signUp() {
+
+    loggedIn = true;
+    saveToLocalStorage();
+  }
+}
+
+async function signUp() {
   const { data: users, error } = await supabase
     .from("users")
     .select()
@@ -71,7 +88,6 @@
     if (error) {
       console.error(error);
     } else {
-      console.log(firstName, lastName);
       await supabase.from("users").insert([
         {
           email,
@@ -80,25 +96,30 @@
           lastName,
         },
       ]);
+
+      // Update local storage
+      saveToLocalStorage();
+
       loggedIn = true;
       saveToLocalStorage();
     }
   }
 }
 
-  
-    async function logout() {
-      const { error } = await supabase.auth.signOut();
-      if (error) {
-        console.error(error);
-      } else {
-        loggedIn = false;
-        saveToLocalStorage();
-      }
-    }
-  
+
+async function logout() {
+  const { error } = await supabase.auth.signOut();
+  if (error) {
+    console.error(error);
+  } else {
+    // Clear local storage
+    localStorage.clear();
+    loggedIn = false;
+    saveToLocalStorage();
+  }
+}
     async function checkAuth() {
-        const { user, error } = await supabase.auth.refreshSession()
+        const { user, error } = await supabase.auth.getUser()
         if (error) {
             console.error(error);
         } else if (user) {
@@ -123,7 +144,6 @@ function showModal(id) {
 
 {#if !loggedIn}
 <button class="login" on:click={() => showModal('login-dialog')}>Войти или зарегистрироваться</button>
-<div class="form-container">
   <dialog id="login-dialog">
     <div class="form-container">
       <i on:click={() => document.getElementById('login-dialog').close()} class="fas fa-times"></i>
@@ -140,8 +160,19 @@ function showModal(id) {
         </label>
     </div>
       <button type="submit">Войти</button>
+      <p>Нет аккаунта? <a style="cursor: pointer; text-decoration: underline" on:click={() => {
+        showModal('registration-dialog');
+        document.getElementById('login-dialog').close();
+      }}>Зарегистрироваться</a></p>
     </form>
-    <form on:submit|preventDefault={signUp}>
+  </div>
+</dialog>
+
+<div id="registration-form" class="form-container">
+  <dialog id="registration-dialog">
+    <div class="form-container">
+      <i on:click={() => document.getElementById('registration-dialog').close()} class="fas fa-times"></i>
+      <form on:submit|preventDefault={signUp}>
       <h1>Зарегистрироваться</h1>
       <div class="form-group">
         <label>Имя:
@@ -164,10 +195,11 @@ function showModal(id) {
         </label>
       </div>
       <button type="submit">Зарегистрироваться</button>
-    </form>
-  </div>
-</dialog>
-</div>  
+      </form>
+    </div>
+  </dialog>
+</div>
+
 {:else}
 <section class="logged">
   <h1>{lastName} {firstName}</h1>
@@ -178,6 +210,15 @@ function showModal(id) {
 
 
 <style>
+a {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+p {
+  font-size: 18px;
+}
+
 dialog {
   border: none;
   border-radius: 10px;
@@ -205,9 +246,9 @@ form {
 form button {
   align-self: flex-end;
   margin-top: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 10px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
@@ -250,6 +291,7 @@ i:hover{
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  margin-right: 10px;
 }
 
 .logged h1{
@@ -268,6 +310,7 @@ button.login {
   font-size: 16px;
   cursor: pointer;
   margin-top: 20px;
+  
 }
 
 button.login:hover {
@@ -290,5 +333,7 @@ button.logout:hover {
   background-color: #53008a;
   transition: all 0.3s ease-in-out;
 }
+
+
 
 </style>
