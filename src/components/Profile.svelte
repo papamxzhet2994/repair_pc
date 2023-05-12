@@ -34,7 +34,11 @@
         password,
       });
       if (error) {
-        swal("Ошибка", error.message, "error");
+        swal(
+          "Ошибка", 
+          "Неверный логин или пароль", 
+          "error"
+          )
       } else {
         loggedIn = true;
         saveToLocalStorage();
@@ -111,18 +115,18 @@ function showModal(id) {
   modal.showModal();
 
   modal.addEventListener('close', () => {
-    modal.removeAttribute('open');
-  });
+  modal.removeAttribute('open');
+});
+
 }
   </script>
 
 {#if !loggedIn}
-<button on:click={() => showModal('login-dialog')}>Войти или зарегистрироваться</button>
+<button class="login" on:click={() => showModal('login-dialog')}>Войти или зарегистрироваться</button>
 <div class="form-container">
   <dialog id="login-dialog">
     <div class="form-container">
-      <i onclick="document.getElementById('login-dialog').close()" class="fas fa-times"></i>
-    <h2>Войти или зарегистрироваться</h2>
+      <i on:click={() => document.getElementById('login-dialog').close()} class="fas fa-times"></i>
     <form on:submit|preventDefault={signIn}>
       <h1>Войти</h1>
       <div class="form-group">
@@ -165,90 +169,126 @@ function showModal(id) {
 </dialog>
 </div>  
 {:else}
-<div class="logged">
+<section class="logged">
   <h1>{lastName} {firstName}</h1>
-  <button on:click={logout}>Выйти</button>
-</div>
+  <button class="logout" on:click={logout}>Выйти</button>
+</section>
+
 {/if}
 
 
 <style>
 dialog {
-  top: 0;
-  left: 0;
-  width: 500px;
-  height: 100%;
-  margin: auto;
+  border: none;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  background-color: white;
-  z-index: 10;
   overflow: hidden;
-  display: flex;
+  width: 500px;
+  max-width: 100%;
+  background: white;
+  padding: 1rem;
+  z-index: 0;
 }
 
-.form-group {
+.form-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
-  width: 100%;
+  padding: 1rem;
 }
 
-label {
-  font-size: 18px;
+form {
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+}
+
+form button {
+  align-self: flex-end;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  background: linear-gradient(to right,rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243));
+}
+
+form button:hover {
+  background: linear-gradient(to left, rgb(33, 149, 243), rgb(142, 36, 170), rgb(63, 81, 181));
+  transition: all 0.3s ease-in-out;
+}
+
+.form-group input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+  width: 450px;
+  margin-right: 150px;
+  margin-top: 10px;
+}
+
+i {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+i:hover{
+  color: #6700ac;
+}
+
+.logged {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.logged h1{
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #555;
+  margin-right: 10px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-  outline: none;
-  border-color: #5cb85c;
-}
-
-button[type="submit"] {
-  padding: 10px;
-  font-size: 16px;
-  background-color: #5cb85c;
+button.login {
+  background-color: #6700ac;
   color: #fff;
+  padding: 8px 20px;
   border: none;
-  border-radius: 5px;
-  width: 100%;
-  cursor: pointer;
-}
-
-button[type="submit"]:hover {
-  background-color: #449d44;
-}
-
-/* Стили для кнопки "Войти или зарегистрироваться" */
-button {
-  padding: 10px;
+  border-radius: 10px;
   font-size: 16px;
-  background-color: #5cb85c;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
-button:hover {
-  background-color: #449d44;
+button.login:hover {
+  background-color: #53008a;
+  transition: all 0.3s ease-in-out;
 }
 
+button.logout {
+  background-color: #6700ac;
+  color: #fff;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 15px;
+}
 
+button.logout:hover {
+  background-color: #53008a;
+  transition: all 0.3s ease-in-out;
+}
 
 </style>

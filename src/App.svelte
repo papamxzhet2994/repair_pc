@@ -8,17 +8,18 @@
   import Footer from './components/Footer.svelte';
   import Masters from './components/Masters.svelte';
   import Profile from './components/Profile.svelte';
-  import { Router, Route } from 'svelte-routing';
-    import { SvelteComponent } from 'svelte';
 </script>
 
 
 <Header />
+<main>
 <Hero />
 <Services />
 <About />
 <Masters />
 <Review />
 <Contact />
+</main>
+<footer>
 <Footer />
-<Profile />
+</footer>

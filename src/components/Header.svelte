@@ -1,5 +1,6 @@
 <script>
   import { scrollto } from "svelte-scrollto";
+  import Profile from "./Profile.svelte";
 </script>
 
 <header class="header">
@@ -12,10 +13,9 @@
       <li><a href="#masters" use:scrollto={'#masters'}>Мастера</a></li>
       <li><a href="#review" use:scrollto={'#review'}>Отзывы</a></li>
       <li><a href="#footer" use:scrollto={'#footer'}>Контакты</a></li>
-      <li><a href="#profile" target="_blank">Login</a></li>
-
     </ul>
   </nav>
+  <li class="profile"><Profile /></li>
 </header>
 
 
@@ -48,8 +48,7 @@
 
 .nav-links {
     display: flex;
-    margin: 0;
-    padding: 0;
+
   }
 
   .nav-links li {
@@ -77,6 +76,11 @@
   }
 
 
+  .profile {
+    display: flex;
+    list-style: none;
+    margin-bottom: 20px;
+  }
 
 
 
