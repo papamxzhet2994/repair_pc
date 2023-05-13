@@ -30,6 +30,7 @@
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-bottom: 30px;
 }
 
 .btn:hover {

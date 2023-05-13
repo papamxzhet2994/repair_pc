@@ -34,11 +34,13 @@ async function signIn() {
     password,
   });
   if (error) {
-    swal(
-      "Ошибка", 
-      "Неверный логин или пароль", 
-      "error"
-    )
+    swal({
+      title: "Ошибка",
+      text: "Неверный логин или пароль",
+      icon: "error",
+    });
+    const modal = document.getElementById("login-dialog");
+    modal.close();
   } else {
     // Fetch user details from the database and update local storage
     const { data: users, error } = await supabase
@@ -79,6 +81,8 @@ async function signUp() {
       "Попробуйте войти с помощью своего пароля",
       "warning"
     );
+    const modal = document.getElementById("registration-dialog");
+    modal.close();
   } else {
     const { data, error } = await supabase.auth.signUp({
       email,
@@ -119,7 +123,7 @@ async function logout() {
   }
 }
     async function checkAuth() {
-        const { user, error } = await supabase.auth.getUser()
+        const { user, error } = await supabase.auth.initialize()
         if (error) {
             console.error(error);
         } else if (user) {
@@ -167,6 +171,12 @@ function showModal(id) {
     </form>
   </div>
 </dialog>
+
+<!-- Form.svelte: <form><slot/></form>
+<Form>
+<Input>
+  <Button>Какой-то текст</Button>
+</Form> -->
 
 <div id="registration-form" class="form-container">
   <dialog id="registration-dialog">
