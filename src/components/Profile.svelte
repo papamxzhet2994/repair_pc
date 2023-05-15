@@ -1,6 +1,7 @@
 <script>
 import swal from "sweetalert";
 import supabase from "../../supabase";
+import HistorySidenav from "./HistorySidenav.svelte";
 
 let email = "";
 let password = "";
@@ -14,7 +15,7 @@ function saveToLocalStorage() {
   localStorage.setItem("password", password);
   localStorage.setItem("firstName", firstName);
   localStorage.setItem("lastName", lastName);
-  localStorage.setItem('loggedIn', loggedIn.toString());
+  localStorage.setItem('loggedIn', loggedIn);
 }
 
 // Загрузка данных из LocalStorage
@@ -122,17 +123,18 @@ async function logout() {
     saveToLocalStorage();
   }
 }
-    async function checkAuth() {
-        const { user, error } = await supabase.auth.initialize()
-        if (error) {
-            console.error(error);
-        } else if (user) {
-            loggedIn = true;
-            saveToLocalStorage();
-        }
 
-}
-checkAuth();
+  async function checkAuth() {
+      const { user, error } = await supabase.auth.getUser(URLSearchParams.toString());
+        if (error) {
+          console.error(error);
+        } else if (user) {
+          loggedIn = true;
+          saveToLocalStorage();
+        }
+  }
+
+  checkAuth();
   
 
 function showModal(id) {
@@ -212,6 +214,7 @@ function showModal(id) {
 
 {:else}
 <section class="logged">
+  <a style="cursor: pointer; text-decoration: underline; color: black;"><HistorySidenav /></a>
   <h1>{lastName} {firstName}</h1>
   <button class="logout" on:click={logout}>Выйти</button>
 </section>
@@ -305,9 +308,9 @@ i:hover{
 }
 
 .logged h1{
-  font-size: 1.5rem;
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-top: 30px;
   margin-right: 10px;
 }
 
@@ -337,13 +340,13 @@ button.logout {
   font-size: 16px;
   cursor: pointer;
   margin-right: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 button.logout:hover {
   background-color: #53008a;
   transition: all 0.3s ease-in-out;
 }
-
-
-
 </style>
