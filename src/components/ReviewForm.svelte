@@ -1,45 +1,58 @@
 <script>
-    export let onClose;
-    export let closeModal;
-    import supabase from "../../supabase";
-    import swal from "sweetalert";
-    
-    let name = '';
-    let review = '';
+  export let onClose;
+  export let closeModal ;
+  import supabase from "../../supabase.js";
+  import swal from "sweetalert";
 
+  let name = '';
+  let review = '';
 
-    
   async function handleSubmit(event) {
     event.preventDefault();
-    const {data, error} = await supabase.from("review").insert([
-      {
-        name: name,
-        review: review
-      }
-    ]);
+
+    const {data: {user}, error} = await supabase.auth.getUser();
+
     if (error) {
-      console.log(error);
-      closeModal();
-    } else {
-      console.log("Успешно отправлено");
-      name = "";
-      review = "";
-      swal({
-        title: "Успешно",
-        text: "Спасибо за ваш отзыв!",
-        icon: "success",
-      });
-      closeModal();
+      console.log("Ошибка при получении текущего пользователя:", error);
+      return;
+    }
+
+    console.log("Текущий пользователь:", user);
+
+    if (!user) {
+      swal("Ошибка", "Только зарегистрированные пользователи могут оставлять отзывы", "error");
+      return;
+    }
+  addReview();
+
+    async function addReview() {
+
+      const {data, error} = await supabase.from("review").insert([
+        {
+          name: name,
+          review: review
+        }
+      ]);
+
+      if (error) {
+        console.log("Ошибка при отправке отзыва:", error);
+        closeModal();
+      } else {
+        console.log("Отзыв успешно отправлен:", data);
+        name = "";
+        review = "";
+        swal("Успешно", "Спасибо за ваш отзыв!", "success");
+        closeModal();
+      }
     }
   }
+  function handleCancel() {
+    onClose();
+  }
+
+</script>
 
 
-    function handleCancel() {
-      onClose();
-    }
-
-
-  </script>
   <div class="reviews-container">
   <div class="modal" class:modal-open={true}>
     <div class="modal-content">
@@ -178,7 +191,7 @@ margin-top: 5px;
     padding: 20px;
     max-width: 100%;
     width: 100%;
-    border-radius: 15;
+    border-radius: 15px;
   }
 
   .modal-content h2 {

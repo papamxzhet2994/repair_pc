@@ -16,8 +16,8 @@
     } else {
       reviews = data;
     }
-  } 
-  
+  }
+
   async function loadReviews() {
     await getReviews();
     const container = document.getElementById("reviews-container");
@@ -63,17 +63,17 @@
       container.appendChild(reviewEl);
     });
   }
-  
+
   async function nextTestimonial() {
     current = (current + 1) % reviews.length;
     await loadReviews();
   }
-  
+
   async function prevTestimonial() {
     current = (current - 1 + reviews.length) % reviews.length;
     await loadReviews();
   }
-  
+
   loadReviews();
 </script>
 

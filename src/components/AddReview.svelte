@@ -1,7 +1,7 @@
 <script>
   import Button from './Button.svelte';
   import ReviewForm from './ReviewForm.svelte';
-  
+
   let isModalOpen = false;
   
   function handleAddReview() {

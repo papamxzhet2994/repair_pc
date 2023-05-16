@@ -29,6 +29,7 @@ function loadFromLocalStorage() {
 
 loadFromLocalStorage();
 
+
 async function signIn() {
   const { error } = await supabase.auth.signInWithPassword({
     email,
@@ -43,7 +44,6 @@ async function signIn() {
     const modal = document.getElementById("login-dialog");
     modal.close();
   } else {
-    // Fetch user details from the database and update local storage
     const { data: users, error } = await supabase
       .from("users")
       .select()
@@ -124,17 +124,17 @@ async function logout() {
   }
 }
 
-  async function checkAuth() {
-      const { user, error } = await supabase.auth.getUser(URLSearchParams.toString());
-        if (error) {
-          console.error(error);
-        } else if (user) {
-          loggedIn = true;
-          saveToLocalStorage();
-        }
+
+async function checkAuth() {
+  const { user, error } = await supabase.auth.setSession();
+
+  if (error) {
+    console.log("Ошибка при получении текущего пользователя:", error);
+    return false;
   }
 
-  checkAuth();
+  return user !== null;
+}
   
 
 function showModal(id) {
@@ -146,7 +146,7 @@ function showModal(id) {
 });
 
 }
-  </script>
+</script>
 
 {#if !loggedIn}
 <button class="login" on:click={() => showModal('login-dialog')}>Войти или зарегистрироваться</button>
