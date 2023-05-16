@@ -90,7 +90,7 @@
       z-index: 1;
       top: 0;
       right: 0;
-      background-color: rgba(17, 17, 17, 0.4);
+      background-color: rgba(12, 12, 12, 0.4);
       backdrop-filter: blur(10px);
       overflow-x: hidden;
       transition: 0.5s;
@@ -121,11 +121,11 @@
 
 p {
   color: white;
-  text-align: start;
+  text-align: end;
   font-size: 20px;
   font-weight: bold;
   margin-top: 10px;
-  margin-left: 30px;
+  margin-right: 30px;
 }
 
 h1 {
