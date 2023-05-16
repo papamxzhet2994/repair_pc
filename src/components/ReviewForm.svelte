@@ -10,10 +10,23 @@
   async function handleSubmit(event) {
     event.preventDefault();
 
+
     const {data: {user}, error} = await supabase.auth.getUser();
 
     if (error) {
-      console.log("Ошибка при получении текущего пользователя:", error);
+      swal({
+        title: "Ошибка",
+        text: "Пользователь должен быть зарегистрирован",
+        icon: "error"
+      })
+      handleCancel();
+    }
+    if (name.trim() === '' || review.trim() === '') {
+      swal({
+        title: "Ошибка",
+        text: "Пожайлуста, заполните все поля",
+        icon: "error"
+      })
       return;
     }
 
@@ -36,13 +49,13 @@
 
       if (error) {
         console.log("Ошибка при отправке отзыва:", error);
-        closeModal();
+        handleCancel();
       } else {
         console.log("Отзыв успешно отправлен:", data);
         name = "";
         review = "";
         swal("Успешно", "Спасибо за ваш отзыв!", "success");
-        closeModal();
+        handleCancel();
       }
     }
   }
