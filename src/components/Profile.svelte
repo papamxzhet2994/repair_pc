@@ -126,16 +126,21 @@ async function logout() {
 
 
 async function checkAuth() {
-  const { user, error } = await supabase.auth.setSession();
+  const { data: { user }, error } = await supabase.auth.getUser();
+  // console.log("user:", user);
+  // console.log("error:", error);
 
   if (error) {
-    console.log("Ошибка при получении текущего пользователя:", error);
+    console.log("Error retrieving the current user:", error);
     return false;
   }
 
   return user !== null;
 }
-  
+
+checkAuth().then((result) => {
+  console.log(result);
+});
 
 function showModal(id) {
   const modal = document.getElementById(id);
@@ -174,12 +179,6 @@ function showModal(id) {
   </div>
 </dialog>
 
-<!-- Form.svelte: <form><slot/></form>
-<Form>
-<Input>
-  <Button>Какой-то текст</Button>
-</Form> -->
-
 <div id="registration-form" class="form-container">
   <dialog id="registration-dialog">
     <div class="form-container">
@@ -213,11 +212,11 @@ function showModal(id) {
 </div>
 
 {:else}
-<section class="logged">
-  <a style="cursor: pointer; text-decoration: underline; color: black;"><HistorySidenav /></a>
-  <h1>{lastName} {firstName}</h1>
-  <button class="logout" on:click={logout}>Выйти</button>
-</section>
+  <section class="logged">
+    <h1>{lastName} {firstName}</h1>
+      <button class="logout" on:click={logout}>Выйти</button>
+      <button class="logout"><HistorySidenav /></button>
+  </section>
 
 {/if}
 
@@ -226,6 +225,7 @@ function showModal(id) {
 a {
   cursor: pointer;
   font-size: 18px;
+
 }
 
 p {
@@ -310,8 +310,8 @@ i:hover{
 .logged h1{
   font-size: 18px;
   font-weight: bold;
-  margin-top: 30px;
-  margin-right: 10px;
+  margin-top: 35px;
+  margin-right: 20px;
 }
 
 button.login {
@@ -323,7 +323,6 @@ button.login {
   font-size: 16px;
   cursor: pointer;
   margin-top: 20px;
-  
 }
 
 button.login:hover {

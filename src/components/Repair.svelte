@@ -13,6 +13,7 @@
   let name = "";
   let email = "";
   let problem = "";
+  let date = new Date();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -20,7 +21,8 @@
       {
         name: name,
         email: email,
-        problem: problem
+        problem: problem,
+        date: date
       }
     ]);
     if (error) {
