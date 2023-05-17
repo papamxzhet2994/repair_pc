@@ -4,19 +4,19 @@
         name: 'Иван Иванов',
         specialization: 'Ремонт и сборка ПК',
         experience: 'Стаж: 10лет',
-        photo: 'https://via.placeholder.com/150'
+        photo: 'https://logo.clearbit.com/amd.com',
       },
       {
         name: 'Петр Петров',
         specialization: 'Установка и настройка ПО',
         experience: 'Стаж: 5 лет',
-        photo: 'https://via.placeholder.com/150'
+        photo: 'https://logo.clearbit.com/microsoft.com'
       },
       {
         name: 'Анна Сидорова',
         specialization: 'Удаленная поддержка ПК',
         experience: 'Стаж: 7 лет',
-        photo: 'https://via.placeholder.com/150'
+        photo: 'https://logo.clearbit.com/remote.com'
       }
     ];
   </script>

@@ -16,10 +16,17 @@
     if (error) {
       swal({
         title: "Ошибка",
-        text: "Пользователь должен быть зарегистрирован",
+        text: error.message,
         icon: "error"
       })
       handleCancel();
+    }
+
+    console.log("Текущий пользователь:", user);
+
+    if (!user) {
+      swal("Ошибка", "Только зарегистрированные пользователи могут оставлять отзывы", "error");
+      return;
     }
     if (name.trim() === '' || review.trim() === '') {
       swal({
@@ -27,13 +34,6 @@
         text: "Пожайлуста, заполните все поля",
         icon: "error"
       })
-      return;
-    }
-
-    console.log("Текущий пользователь:", user);
-
-    if (!user) {
-      swal("Ошибка", "Только зарегистрированные пользователи могут оставлять отзывы", "error");
       return;
     }
   addReview();
@@ -185,7 +185,9 @@ margin-top: 5px;
   color: #333;
 }
 
-
+textarea {
+    font-size: 18px;
+}
 @media (max-width: 768px) {
   .modal {
     width: 100%;

@@ -1,3 +1,7 @@
+<script>
+    import Slider from "./Slider.svelte";
+</script>
+
 <section id="about" class="about">
   <div class="container">
       <h2>Пару слов о нас</h2>
@@ -6,8 +10,8 @@
           <p>Мы команда профессионалов, которая занимается ремонтом компьютеров и ноутбуков уже более 10 лет. Мы предоставляем услуги на высоком уровне, используя только качественные комплектующие и инструменты.</p>
           <p>Наши мастера обладают большим опытом в области ремонта компьютеров и ноутбуков. Мы стремимся предоставить нашим клиентам быстрое и качественное обслуживание по доступным ценам.</p>
         </div>
-        <div class="about-image">
-          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fzewerok.ru%2Fwp-content%2Fuploads%2F2021%2F06%2Fxy_5Hv4rTAU.jpg&f=1&nofb=1&ipt=b346e93a56924e1f730b3b205d21b7e7254f3260ad006c9a05bdedd7ff532dae&ipo=images" alt="О нас">
+        <div>
+      <Slider />
         </div>
       </div>
     </div>
@@ -27,7 +31,7 @@
   padding: 0 20px;
 }
 .about {
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,6 +136,6 @@
   }
 
 
-  
+
 }
 </style>

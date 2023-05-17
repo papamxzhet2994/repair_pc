@@ -43,7 +43,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 1px;
-    margin-left: 20px;
   }
 
 .nav-links {
@@ -112,8 +111,7 @@
     background: linear-gradient(to right,rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-top: 1px;
-    margin: auto;
+    margin-left: 0;
   }
 
   

@@ -58,9 +58,7 @@
   text-align: center;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   background-color: #fff;
-  
 }
-
 
 .service-cards {
   display: flex;
@@ -132,7 +130,7 @@ i {
 
 @media (max-width: 768px){
   .service-card {
-  width: 300px;
+  width: 100%;
   margin-bottom: 30px;
 }
 
@@ -147,5 +145,7 @@ i {
   justify-content: center;
   flex-direction: column;
 }
+
+
 }
 </style>

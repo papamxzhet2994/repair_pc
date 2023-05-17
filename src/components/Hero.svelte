@@ -91,7 +91,7 @@ import Repair from './Repair.svelte';
 
   .hero .btn {
     font-size: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 10px;
 
   }

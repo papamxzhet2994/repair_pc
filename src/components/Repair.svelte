@@ -167,6 +167,9 @@ font-size: 2rem;
 color: #333;
 }
 
+textarea {
+  font-size: 18px;
+}
 
 @media (max-width: 768px) {
   .modal {
@@ -187,7 +190,6 @@ color: #333;
     padding: 20px;
     max-width: 100%;
     width: 100%;
-    border-radius: 15;
   }
 
   .modal-content h2 {
@@ -204,7 +206,7 @@ color: #333;
 
   .modal-content textarea{
     display: block;
-    width: 329px;
+    width: 95%;
     height: 100px;
     padding: 8px;
     border: 1px solid #ccc;
@@ -215,7 +217,7 @@ color: #333;
   .modal-content input[type="text"],
   .modal-content input[type="email"] {
     display: block;
-    width: 325px;
+    width: 95%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;

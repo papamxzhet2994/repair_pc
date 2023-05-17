@@ -154,7 +154,7 @@ function showModal(id) {
 </script>
 
 {#if !loggedIn}
-<button class="login" on:click={() => showModal('login-dialog')}>Войти или зарегистрироваться</button>
+<button class="login" on:click={() => showModal('login-dialog')}>Вход</button>
   <dialog id="login-dialog">
     <div class="form-container">
       <i on:click={() => document.getElementById('login-dialog').close()} class="fas fa-times"></i>
@@ -304,7 +304,6 @@ i:hover{
 }
 
 .logged {
-  display: table-column;
   justify-content: center;
   align-items: flex-end;
   margin-right: 10px;
@@ -360,5 +359,34 @@ button.logout:hover {
 
 button.logout:active {
   transform: scale(0.98);
+}
+
+@media (max-width: 500px) {
+  .logged h1{
+      font-size: 15px;
+    }
+
+    button.login {
+      width: auto;
+      height: 35px;
+      font-size: 15px;
+    }
+
+    button.logout {
+      width: 100px;
+    }
+
+    dialog {
+      width: 368px;
+    }
+    .form-group input {
+      width: 315px;
+    }
+
+    form button {
+      font-size: 14px;
+      width: 100%;
+      background: #7e2291;
+    }
 }
 </style>

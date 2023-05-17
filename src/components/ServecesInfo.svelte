@@ -16,7 +16,7 @@ function closeModal() {
 }
 
   function handleDialogClick(event) {
-    if (event.target === event.currentTarget) {
+    if (event.target === event.currentTarget && isOpen) {
       closeModal();
     }
   }
@@ -53,17 +53,18 @@ dialog {
 }
 
 .modal-content {
-  height: 268px;
+  height: auto;
   background-color: #f5f5f5;
-  margin: auto;
   padding: 20px;
   max-width: 600px;
-  border-radius: 30px;
+  border-radius: 15px;
   color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+  margin: auto;
 }
 
 .modal-footer {
@@ -75,34 +76,14 @@ dialog {
   justify-content: space-between;
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 30px;
-  margin-left: auto;
-}
-
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .btn {
   background-color: #7e2291;
   border: none;
-  border-radius: 20px;
+  border-radius: 15px;
   color: #fff;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 15px 30px;
-  text-transform: uppercase;
+  font-size: 18px;
+  padding: 10px 20px;
   transition: background-color 0.3s ease;
   margin-top: auto;
 }
@@ -138,13 +119,12 @@ dialog {
 a {
   background-color: #7e2291;
   border: none;
-  border-radius: 20px;
+  border-radius: 15px;
   color: #fff;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  padding: 15px 30px;
-  text-transform: uppercase;
+  padding: 10px 20px;
   transition: background-color 0.3s ease;
   margin-top: auto;
   text-decoration: none;
@@ -153,21 +133,16 @@ a {
   margin-top: auto;
 }
 
-@media (max-width: 768px) {
-  .modal{
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-  }
+@media (max-width: 500px) {
 
   .modal-content{
-    height: 270px;
+    height: auto;
     background-color: #f5f5f5;
-    margin: auto;
+    margin-left: 35px;
     padding: 20px;
     border: 1px solid #888;
     max-width: 600px;
-    border-radius: 30px;
+    border-radius: 15px;
     color: black;
     width: 268px;
     overflow: auto;
@@ -176,6 +151,16 @@ a {
 
   .btn {
     opacity: 1;
+    font-size: 14px;
+  }
+
+  dialog {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(17, 17, 17, 0.5);
+    border: none;
+    border-radius: none;
   }
 
 }

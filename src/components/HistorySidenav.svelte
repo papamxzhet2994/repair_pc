@@ -75,6 +75,7 @@
       text-align: end;
       margin-right: 30px;
       line-height: 5px;
+      color: #fff;
     }
     .email {
       border: 1px solid white;
