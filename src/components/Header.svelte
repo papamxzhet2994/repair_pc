@@ -57,11 +57,7 @@
     display: block;
   }
 
-  .nav-links li:last-child {
-    margin-right: 10;
-  }
-
-  .nav-links a {
+   .nav-links a {
     display: block;
     text-decoration: none;
     font-size: 16px;

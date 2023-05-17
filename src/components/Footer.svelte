@@ -9,7 +9,7 @@
       <p>Вы можете связаться с нами любым удобным способом или заказать звонок</p>
       <p>г. Санкт-Петербург, ул. Солевая 69, Россия</p>
       <p>Телефон: +7 (123) 456-7890</p>
-      <p>Email: example@example.com</p>
+      <p>Email: pcrescuer@mail.ru</p>
     </div>
       <ul class="scroll">
         <li><a href="#hero" use:scrollto={'#hero'}><i class="fa-sharp fa-solid fa-arrow-up"></i></a></li>
@@ -36,7 +36,7 @@
 }
 
 .contact-details h2 {
-  text-align: flex-start;
+  text-align: start;
   font-size: 24px;
 }
 
@@ -47,6 +47,7 @@
 
 .scroll li {
   margin-left: 10px;
+  margin-bottom: 10px;
   list-style: none;
   cursor: pointer;
   transition: 0.3s;

@@ -179,7 +179,7 @@ function showModal(id) {
   </div>
 </dialog>
 
-<div id="registration-form" class="form-container">
+
   <dialog id="registration-dialog">
     <div class="form-container">
       <i on:click={() => document.getElementById('registration-dialog').close()} class="fas fa-times"></i>
@@ -209,14 +209,13 @@ function showModal(id) {
       </form>
     </div>
   </dialog>
-</div>
 
 {:else}
   <section class="logged">
     <h1>{lastName} {firstName}</h1>
-      <button class="logout" on:click={logout}>Выйти</button>
-      <button class="logout"><HistorySidenav /></button>
+      <a class="logout"><HistorySidenav /></a>
   </section>
+      <button class="logout" on:click={logout}>Выйти</button>
 
 {/if}
 
@@ -225,7 +224,7 @@ function showModal(id) {
 a {
   cursor: pointer;
   font-size: 18px;
-
+  text-decoration: underline;
 }
 
 p {
@@ -269,6 +268,10 @@ form button {
   background: linear-gradient(to right,rgb(142, 36, 170), rgb(63, 81, 181), rgb(33, 149, 243));
 }
 
+form button:active {
+  transform: scale(0.98);
+}
+
 form button:hover {
   background: linear-gradient(to left, rgb(33, 149, 243), rgb(142, 36, 170), rgb(63, 81, 181));
   transition: all 0.3s ease-in-out;
@@ -301,21 +304,23 @@ i:hover{
 }
 
 .logged {
-  display: flex;
+  display: table-column;
   justify-content: center;
   align-items: flex-end;
   margin-right: 10px;
+  margin-bottom: 10px;
+  line-height: 0.5;
 }
 
 .logged h1{
   font-size: 18px;
   font-weight: bold;
   margin-top: 35px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 button.login {
-  background-color: #6700ac;
+  background-color: #7e2291;
   color: #fff;
   padding: 8px 20px;
   border: none;
@@ -323,6 +328,7 @@ button.login {
   font-size: 16px;
   cursor: pointer;
   margin-top: 20px;
+  margin-right: 15px;
 }
 
 button.login:hover {
@@ -330,22 +336,29 @@ button.login:hover {
   transition: all 0.3s ease-in-out;
 }
 
+button.login:active {
+  transform: scale(0.98);
+}
+
 button.logout {
-  background-color: #6700ac;
+  background-color: #7e2291;
   color: #fff;
   padding: 8px 20px;
   border: none;
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 30px;
   margin-right: 15px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 8px;
+  max-height: 35px;
 }
 
 button.logout:hover {
-  background-color: #53008a;
+  background-color: #611e8d;
   transition: all 0.3s ease-in-out;
+}
+
+button.logout:active {
+  transform: scale(0.98);
 }
 </style>
