@@ -97,7 +97,7 @@
   .review {
     margin-top: 100px;
     margin-bottom: 100px;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
     padding: 50px 0;
     display: flex;
     justify-content: center;

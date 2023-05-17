@@ -55,13 +55,12 @@
     </form>
   </div>
 </section>
-<hr>
 
 <style>
 
 
 .call-request {
-  background-color: #f5f5f5;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;

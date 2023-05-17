@@ -15,24 +15,29 @@ function closeModal() {
   document.body.style.overflow = 'auto';
 }
 
+  function handleDialogClick(event) {
+    if (event.target === event.currentTarget) {
+      closeModal();
+    }
+  }
   </script>
   
   <button class="btn" on:click={openModal}>Узнать больше</button>
-  
+
   {#if isOpen}
-  <div class="modal" on:keydown={closeModal}>
-    <div class="modal-content">
-      <span class="close" on:click={closeModal} on:keydown={(e) => {if (e.key === "Enter") closeModal()}}>&times;</span>
-      <h2>{title}</h2>
-      <p>{content}</p>
-      <a href="./#contact" use:scrollto={'#contact'} on:click={closeModal}>Связаться с нами</a>
-    </div>
-  </div>
-  
+    <dialog class="modal" on:click={handleDialogClick} on:keydown={closeModal}>
+      <div class="modal-content">
+        <h2>{title}</h2>
+        <p>{content}</p>
+        <div class="modal-footer">
+          <a href="./#contact" use:scrollto={'#contact'} on:click={closeModal}>Связаться с нами</a>
+        </div>
+      </div>
+    </dialog>
   {/if}
-  
   <style>
-.modal {
+
+dialog {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,6 +48,8 @@ function closeModal() {
   width: 100%;
   height: 100%;
   overflow: auto;
+  background: rgba(17, 17, 17, 0.5);
+  border: none;
 }
 
 .modal-content {
@@ -50,20 +57,34 @@ function closeModal() {
   background-color: #f5f5f5;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
   max-width: 600px;
   border-radius: 30px;
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  justify-content: space-between;
+}
 
 .close {
   color: #aaa;
   float: right;
-  font-size: 28px;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
+  font-size: 30px;
+  margin-left: auto;
 }
+
 
 .close:hover,
 .close:focus {
@@ -85,16 +106,16 @@ function closeModal() {
   transition: background-color 0.3s ease;
   margin-top: auto;
 }
-    
+
 .btn:hover {
   background-color: #630077;
 }
-    
+
  .btn {
   opacity: 1;
   transform: translateY(0);
 }
-  
+
 .btn:focus {
   outline: none;
 }
@@ -129,7 +150,7 @@ a {
   text-decoration: none;
   display: inline-block;
   text-align: center;
-  margin-top: auto; 
+  margin-top: auto;
 }
 
 @media (max-width: 768px) {

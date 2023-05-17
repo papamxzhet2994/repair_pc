@@ -1,6 +1,7 @@
 <script>
   import swal from 'sweetalert';
   import supabase from '../../supabase.js';
+  import {onMount} from "svelte";
 
   let requests = [];
 
@@ -39,11 +40,10 @@
       problem: row.problem
     }));
   }
-
 </script>
 
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" on:click={() => closeNav()}>x</a>
+  <a href="javascript:void(0)" class="closebtn" on:click={() => closeNav()}>&times</a>
   {#if requests.length === 0}
     <p>No requests found</p>
   {:else}
@@ -87,7 +87,7 @@
       height: 100%;
       width: 0;
       position: fixed;
-      z-index: 1;
+      z-index: 10000;
       top: 0;
       right: 0;
       background-color: rgba(12, 12, 12, 0.4);

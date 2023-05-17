@@ -5,7 +5,6 @@
 
 <header class="header">
   <a href="/" class="logo">PC Rescuer</a>
- 
   <nav>
     <ul class="nav-links">
       <li><a href="#services" use:scrollto={'#services'}>Услуги</a></li>

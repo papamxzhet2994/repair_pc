@@ -3,7 +3,7 @@
   import swal from 'sweetalert';
   export let isOpen = false;
   export let onClose;
-  
+
   function closeModal() {
     isOpen = false;
     onClose();
@@ -41,7 +41,6 @@
 });
     }
   }
-
 
 </script>
 
@@ -85,14 +84,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
-  overflow-x: hidden;
-  transition: 0.3s;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .modal-open {
-  overflow-y: auto;
-  overflow-x: hidden;
+  opacity: 1;
 }
 
 .modal-content {

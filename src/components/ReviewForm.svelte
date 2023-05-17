@@ -123,6 +123,7 @@
 .modal-content h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    text-align: start;
 }
 
 .modal-content label {

@@ -19,6 +19,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+    background-color: #f5f5f5;
 }
 .container {
   max-width: 1200px;
