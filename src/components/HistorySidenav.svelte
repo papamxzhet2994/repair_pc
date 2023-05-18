@@ -45,7 +45,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" on:click={() => closeNav()}>&times</a>
   {#if requests.length === 0}
-    <p>No requests found</p>
+    <p>У Вас нет заявок</p>
   {:else}
     {#each requests as request}
       <h1>{request.date}</h1>

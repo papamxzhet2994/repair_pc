@@ -6,6 +6,7 @@
 
   let name = '';
   let review = '';
+  let date = new Date();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -43,7 +44,8 @@
       const {data, error} = await supabase.from("review").insert([
         {
           name: name,
-          review: review
+          review: review,
+          date: date
         }
       ]);
 

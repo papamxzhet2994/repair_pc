@@ -1,63 +1,56 @@
 <script>
-    const masters = [
-      {
-        name: 'Иван Иванов',
-        specialization: 'Ремонт и сборка ПК',
-        experience: 'Стаж: 10лет',
-        photo: 'https://cdn.openai.com/labs/images/A%20comic%20book%20cover%20of%20a%20superhero%20wearing%20headphones.webp?v=1',
-      },
-      {
-        name: 'Петр Петров',
-        specialization: 'Установка и настройка ПО',
-        experience: 'Стаж: 5 лет',
-        photo: 'https://logo.clearbit.com/microsoft.com'
-      },
-      {
-        name: 'Анна Сидорова',
-        specialization: 'Удаленная поддержка ПК',
-        experience: 'Стаж: 7 лет',
-        photo: 'https://logo.clearbit.com/remote.com'
-      }
-    ];
-  </script>
-  
-  <section class="masters" id="masters">
-    <h2>Наши мастера</h2>
-    <div class="master-cards">
-      {#each masters as master}
-        <div class="master-card">
-          {#if master.photo}
-            <img src="{master.photo}" alt="{master.name}" class="master-photo">
-          {/if}
-          <h3>{master.name}</h3>
-          <p>{master.specialization}</p>
-          <p>{master.experience}</p>
-        </div>
-      {/each}
-    </div>
-  </section>
-  
+  import supabase from "../../supabase.js";
+let masters = [];
+
+async function fetchMasters() {
+        const { data, error } = await supabase.from('masters').select('*');
+        if (error) {
+        console.error('Error fetching masters:', error.message);
+} else {
+        masters = data;
+       }
+}
+
+fetchMasters();
+</script>
+
+<section class="masters" id="masters">
+  <h2>Наши мастера</h2>
+  <div class="master-cards">
+    {#each masters as master}
+      <div class="master-card">
+        {#if master.photo}
+          <img src="{master.photo}" alt="{master.name}" class="master-photo">
+        {/if}
+        <h3>{master.name}</h3>
+        <p>{master.specialization}</p>
+        <p>{master.experience}</p>
+      </div>
+    {/each}
+  </div>
+</section>
+
   <style>
 
-    
+
 
     .masters {
       text-align: center;
       background-color: #fff;
     }
-  
+
     .masters h2 {
       font-size: 26px;
       padding-top: 50px;
     }
-  
+
     .master-cards {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
     }
-  
+
     .master-card {
       background-color: #f9f9f9;
       border-radius: 10px;
@@ -70,24 +63,24 @@
       transition: transform 0.3s;
       width: 300px;
     }
-  
+
     .master-card:hover {
       transform: translateY(-5px);
     }
-  
+
     .master-photo {
       border-radius: 50%;
       height: 150px;
       margin-bottom: 10px;
       width: 150px;
     }
-  
+
     .master-card h3 {
       color: #333;
       font-size: 24px;
       margin-bottom: 10px;
     }
-  
+
     .master-card p {
       color: #666;
       font-size: 18px;
@@ -132,7 +125,6 @@
       .masters {
         padding: 20px;
       }
-      
+
     }
   </style>
-  

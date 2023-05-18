@@ -1,42 +1,42 @@
 <script>
   import { scrollto } from "svelte-scrollto";
-    export let title = "";
-    export let content = "";
-    export let isOpen = false;
-    
-function openModal() {
-  isOpen = true;
-  document.body.style.overflow = 'hidden';
-}
+  export let title = "";
+  export let content = "";
+  export let isOpen = false;
 
-    
-function closeModal() {
-  isOpen = false;
-  document.body.style.overflow = 'auto';
-}
+  function openModal() {
+    isOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    isOpen = false;
+    document.body.style.overflow = 'auto';
+  }
 
   function handleDialogClick(event) {
     if (event.target === event.currentTarget && isOpen) {
       closeModal();
     }
   }
-  </script>
-  
-  <button class="btn" on:click={openModal}>Узнать больше</button>
+</script>
 
-  {#if isOpen}
-    <dialog class="modal" on:click={handleDialogClick} on:keydown={closeModal}>
-      <div class="modal-content">
-        <h2>{title}</h2>
-        <p>{content}</p>
-        <div class="modal-footer">
-          <a href="./#contact" use:scrollto={'#contact'} on:click={closeModal}>Связаться с нами</a>
-        </div>
+<button class="btn" on:click={openModal}>Узнать больше</button>
+
+{#if isOpen}
+  <dialog class="modal" on:click={handleDialogClick} on:keydown={closeModal}>
+    <div class="modal-content">
+      <i class="fas fa-times" on:click={closeModal} />
+      <h2>{title}</h2>
+      <p>{content}</p>
+      <div class="modal-footer">
+        <a href="./#contact" use:scrollto={'#contact'} on:click={closeModal}>Связаться с нами</a>
       </div>
-    </dialog>
-  {/if}
-  <style>
+    </div>
+  </dialog>
+{/if}
 
+<style>
 dialog {
   display: flex;
   justify-content: center;
@@ -52,7 +52,15 @@ dialog {
   border: none;
 }
 
+i {
+  cursor: pointer;
+  font-size: 28px;
+  margin-left: auto;
+}
 
+i:hover {
+  color: #7e2291;
+}
 
 .modal-content {
   height: auto;
