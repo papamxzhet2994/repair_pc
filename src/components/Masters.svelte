@@ -4,7 +4,7 @@
         name: 'Иван Иванов',
         specialization: 'Ремонт и сборка ПК',
         experience: 'Стаж: 10лет',
-        photo: 'https://logo.clearbit.com/amd.com',
+        photo: 'https://cdn.openai.com/labs/images/A%20comic%20book%20cover%20of%20a%20superhero%20wearing%20headphones.webp?v=1',
       },
       {
         name: 'Петр Петров',

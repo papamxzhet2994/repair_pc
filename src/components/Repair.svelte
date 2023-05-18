@@ -135,20 +135,23 @@ margin-top: 5px;
 }
 
 .modal-content button.send {
-display: block;
-width: 400px;
-margin: 0 auto;
-padding: 10px;
-border-radius: 15px;
-border: none;
-background-color: #810791;
-color: #fff;
-font-size: 1.2rem;
-margin-top: 40px;
-justify-content: center;
-cursor: pointer;
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  background-color: #810791;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 40px;
+  justify-content: center;
+  cursor: pointer;
 }
 
+.modal-content button.send:active {
+  transform: scale(0.98);
+}
 .modal-content button.send:hover{
     background-color: #61056d;
 }
@@ -167,6 +170,9 @@ font-size: 2rem;
 color: #333;
 }
 
+.modal-content button.close i:hover {
+  color: #810791;
+}
 textarea {
   font-size: 18px;
 }
@@ -194,7 +200,8 @@ textarea {
 
   .modal-content h2 {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    text-align: start;
   }
 
   .modal-content label {

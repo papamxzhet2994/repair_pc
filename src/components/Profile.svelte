@@ -91,7 +91,7 @@ async function signUp() {
     });
 
     if (error) {
-      console.error(error);
+      console.log(error);
     } else {
       await supabase.from("users").insert([
         {
@@ -131,7 +131,7 @@ async function checkAuth() {
   // console.log("error:", error);
 
   if (error) {
-    console.log("Error retrieving the current user:", error);
+    // console.log("Error retrieving the current user:", error);
     return false;
   }
 

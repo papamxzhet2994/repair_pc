@@ -4,16 +4,12 @@
     let currentImage = 0;
     let images = [
         'https://minsk.pozitive.org/images/adresa/minsk.jpg',
-        'https://logo.clearbit.com/rubyonrails.com',
-        'https://logo.clearbit.com/apple.com',
+        'https://kompline.net/image/catalog/Remont/uslugi2.png',
+        'https://kompline.net/image/catalog/Remont/uslugi4.png',
     ];
 
     function nextImage() {
         currentImage = (currentImage + 1) % images.length;
-    }
-
-    function previousImage() {
-        currentImage = (currentImage - 1 + images.length) % images.length;
     }
 
     onMount(() => {
@@ -26,10 +22,9 @@
 </script>
 
 <div class="slider">
-    <button on:click={previousImage}>&lt;</button>
-    <img src={images[currentImage]} alt="Slide" />
-    <button on:click={nextImage}>&gt;</button>
+    <img src={images[currentImage]} alt="master" />
 </div>
+
 
 <style>
     .slider {
@@ -39,8 +34,12 @@
     }
 
     .slider img {
+        width: 1000px;
+        height: 400px;
         max-width: 100%;
+        max-height: 100%;
         height: auto;
+        border-radius: 15px;
     }
 
     .slider button {

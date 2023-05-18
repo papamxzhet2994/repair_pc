@@ -1,5 +1,5 @@
 <script>
-  import ServecesInfo from "./ServecesInfo.svelte";
+  import ServicesInfo from "./ServicesInfo.svelte";
   
   
   let modalOpen = false;
@@ -16,33 +16,33 @@
       <div class="service-card" style="background-image: url('https://multiservice.com.ua/images/remont-pc-min.jpg.pagespeed.ce.YcRygA9olS.jpg')">
         <h3>Диагностика ПК</h3>
         <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-        <ServecesInfo title="Диагностика ПК" content="Мы предоставляем бесплатную диагностику вашего ПК и оцениваем необходимость его ремонта." on:click={closeModal}/>
+        <ServicesInfo title="Диагностика ПК" content="Мы предоставляем бесплатную диагностику вашего ПК и оцениваем необходимость его ремонта." on:click={closeModal}/>
       </div>
       <div class="service-card" style="background-image: url('https://remcor.ru/wp-content/uploads/2020/03/2e1c431baaa36d929c64ece60d9a7e44.jpg')">
         <h3>Ремонт</h3>
         <i class="fa-solid fa-screwdriver-wrench"></i>
-        <ServecesInfo title="Ремонт" content="Мы предоставляем услуги по ремонту вашего компьютера." on:click={closeModal}/>
+        <ServicesInfo title="Ремонт" content="Мы предоставляем услуги по ремонту вашего компьютера." on:click={closeModal}/>
       </div>
       <div class="service-card" style="background-image: url('https://ba.lanagent.ru/wp-content/uploads/2022/02/_%D0%9A%D0%B0%D0%BA-%D0%BF%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C-%D1%87%D1%82%D0%BE-%D0%B4%D0%B5%D0%BB%D0%B0%D0%BB%D0%B8-%D0%BD%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B5-%D0%B7%D0%B0-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B5%D0%B5-%D0%B2%D1%80%D0%B5%D0%BC%D1%8F-e1645016774743.jpg')">
         <h3>Настройка ПО</h3>
         <i class="fa-solid fa-gears"></i>
-        <ServecesInfo title="Настройка ПО" content="Мы предоставляем услуги по установке, обновлению и настройке операционной системы и программного обеспечения." on:click={closeModal}/>
+        <ServicesInfo title="Настройка ПО" content="Мы предоставляем услуги по установке, обновлению и настройке операционной системы и программного обеспечения." on:click={closeModal}/>
       </div>
       <div class="service-card" style="background-image: url('https://s7e5a.scene7.com/is/image/metrohm/4790?$xh-544$')">
         <h3>Удаленная поддержка</h3>
         <i class="fa-solid fa-desktop"></i>
-        <ServecesInfo title="Удаленная поддержка" content="Мы предоставляем услуги удаленной поддержки по решению проблем с вашим ПК через интернет." on:click={closeModal}/>
+        <ServicesInfo title="Удаленная поддержка" content="Мы предоставляем услуги удаленной поддержки по решению проблем с вашим ПК через интернет." on:click={closeModal}/>
       </div>
       <div class="service-card" style="background-image: url('https://content.onliner.by/news/amp/90c8564eff204272a5aac1a2b13056bc.jpeg')">
         <h3>Сборка компьютера</h3>
         <i class="fa-solid fa-hammer"></i>
-        <ServecesInfo title="Сборка компьютера" content="Мы предоставляем услуги сборки компьютера под ваши индивидуальные потребности и бюджет." on:click={closeModal}/>
+        <ServicesInfo title="Сборка компьютера" content="Мы предоставляем услуги сборки компьютера под ваши индивидуальные потребности и бюджет." on:click={closeModal}/>
        
       </div>
       <div class="service-card" style="background-image: url('https://static.baza.farpost.ru/v/1601900790523_bulletin')">
         <h3>Обучение</h3>
         <i class="fa-solid fa-graduation-cap"></i>
-        <ServecesInfo title="Обучение" content="Обучение основам работы с ПК и программами" on:click={closeModal}/>
+        <ServicesInfo title="Обучение" content="Обучение основам работы с ПК и программами" on:click={closeModal}/>
       </div>
     </div>
   </div>

@@ -52,6 +52,8 @@ dialog {
   border: none;
 }
 
+
+
 .modal-content {
   height: auto;
   background-color: #f5f5f5;
@@ -90,6 +92,10 @@ dialog {
 
 .btn:hover {
   background-color: #630077;
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
  .btn {
@@ -131,6 +137,10 @@ a {
   display: inline-block;
   text-align: center;
   margin-top: auto;
+}
+
+a:active {
+  transform: scale(0.98);
 }
 
 @media (max-width: 500px) {

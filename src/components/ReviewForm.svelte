@@ -188,7 +188,7 @@ margin-top: 5px;
 textarea {
     font-size: 18px;
 }
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .modal {
     width: 100%;
     height: 100%;
@@ -224,7 +224,7 @@ textarea {
 
   .modal-content textarea{
     display: block;
-    width: 329px;
+    width: 95%;
     height: 100px;
     padding: 8px;
     border: 1px solid #ccc;
@@ -234,7 +234,7 @@ textarea {
 
   .modal-content input[type="text"] {
     display: block;
-    width: 325px;
+    width: 94%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
