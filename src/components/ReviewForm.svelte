@@ -1,4 +1,8 @@
 <script>
+
+
+  import {onMount} from "svelte";
+
   export let onClose;
   export let closeModal ;
   import supabase from "../../supabase.js";
@@ -7,6 +11,7 @@
   let name = '';
   let review = '';
   let date = new Date();
+  let currentUser = '';
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -23,7 +28,6 @@
       handleCancel();
     }
 
-    console.log("Текущий пользователь:", user);
 
     if (!user) {
       swal("Ошибка", "Только зарегистрированные пользователи могут оставлять отзывы", "error");
@@ -64,7 +68,6 @@
   function handleCancel() {
     onClose();
   }
-
 </script>
 
 

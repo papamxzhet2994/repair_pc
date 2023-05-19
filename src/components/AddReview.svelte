@@ -3,11 +3,13 @@
   import ReviewForm from './ReviewForm.svelte';
 
   let isModalOpen = false;
-  
+
+
+
   function handleAddReview() {
     isModalOpen = true;
   }
-  
+
   function handleCloseModal() {
     isModalOpen = false;
   }

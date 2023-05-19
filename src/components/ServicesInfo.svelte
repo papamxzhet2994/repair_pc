@@ -24,13 +24,13 @@
 <button class="btn" on:click={openModal}>Узнать больше</button>
 
 {#if isOpen}
-  <dialog class="modal" on:click={handleDialogClick} on:keydown={closeModal}>
+  <dialog class="modal" on:click={handleDialogClick}>
     <div class="modal-content">
       <i class="fas fa-times" on:click={closeModal} />
       <h2>{title}</h2>
       <p>{content}</p>
       <div class="modal-footer">
-        <a href="./#contact" use:scrollto={'#contact'} on:click={closeModal}>Связаться с нами</a>
+        <a href="./#contact" use:scrollto={'#contact'} on:click={closeModal} on:touchend={closeModal}>Связаться с нами</a>
       </div>
     </div>
   </dialog>
@@ -54,7 +54,7 @@ dialog {
 
 i {
   cursor: pointer;
-  font-size: 28px;
+  font-size: 28 px;
   margin-left: auto;
 }
 

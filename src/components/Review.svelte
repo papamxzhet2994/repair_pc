@@ -9,6 +9,8 @@
     let { data, error } = await supabase
       .from('review')
       .select('*')
+      .order('id', { ascending: false });
+
 
     if (error) {
       console.log(error);
