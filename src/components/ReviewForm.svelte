@@ -1,17 +1,15 @@
 <script>
-
-
-  import {onMount} from "svelte";
-
+  import StarRating from "./StarRating.svelte";
   export let onClose;
   export let closeModal ;
   import supabase from "../../supabase.js";
   import swal from "sweetalert";
+  import {reviewsStore} from "../lib/store.js";
 
   let name = '';
-  let review = '';
+  let reviews = [];
   let date = new Date();
-  let currentUser = '';
+  let rating = 0;
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -25,6 +23,7 @@
         text: error.message,
         icon: "error"
       })
+
       handleCancel();
     }
 
@@ -33,7 +32,7 @@
       swal("Ошибка", "Только зарегистрированные пользователи могут оставлять отзывы", "error");
       return;
     }
-    if (name.trim() === '' || review.trim() === '') {
+    if (name.trim() === '' || reviews.trim() === '') {
       swal({
         title: "Ошибка",
         text: "Пожайлуста, заполните все поля",
@@ -42,14 +41,14 @@
       return;
     }
   addReview();
-
     async function addReview() {
 
       const {data, error} = await supabase.from("review").insert([
         {
           name: name,
-          review: review,
-          date: date
+          review: reviews,
+          date: date,
+          rating: rating
         }
       ]);
 
@@ -59,7 +58,8 @@
       } else {
         console.log("Отзыв успешно отправлен:", data);
         name = "";
-        review = "";
+        reviews = data;
+        reviewsStore.set(reviews);
         swal("Успешно", "Спасибо за ваш отзыв!", "success");
         handleCancel();
       }
@@ -76,13 +76,18 @@
     <div class="modal-content">
       <h2>Добавить отзыв</h2>
       <form on:submit={handleSubmit}>
+
         <label>
           Имя:
           <input type="text" bind:value={name} />
         </label>
         <label>
           Ваш отзыв:
-          <textarea bind:value={review}></textarea>
+          <textarea bind:value={reviews}></textarea>
+        <label>
+          Оценка:
+          <StarRating bind:value={rating} />
+        </label>
         </label>
         <button class="send" type="submit">Отправить</button>
         <button class="close" on:click={handleCancel}><i class="fa-sharp fa-solid fa-xmark"></i></button>
@@ -92,7 +97,6 @@
 </div>
 
   <style>
-
 .modal {
   color: black;
   position: fixed;
