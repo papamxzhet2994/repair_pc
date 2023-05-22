@@ -7,19 +7,17 @@
   import Contact from './components/Contact.svelte';
   import Footer from './components/Footer.svelte';
   import Masters from './components/Masters.svelte';
-  import Profile from './components/Profile.svelte';
+
 </script>
 
 
 <Header />
-<main>
-<Hero />
-<Services />
-<About />
-<Masters />
-<Review />
-<Contact />
-</main>
-<footer>
-<Footer />
-</footer>
+    <main>
+        <Hero />
+        <Services />
+        <About />
+        <Masters />
+        <Review />
+        <Contact />
+    </main>
+        <Footer />

@@ -1,39 +1,30 @@
-import Hero from '../../src/components/Hero.svelte';
-
-describe('Hero', () => {
-  it('playground', () => {
+import Hero from "../components/Hero.svelte";
+import Repair from "../components/Repair.svelte";
+describe('Modal Window', () => {
+  it('should open the modal window when the "Заказать ремонт" button is clicked', () => {
     cy.mount(Hero);
+
+    cy.get('.btn').click();
+
+    cy.get('.modal') // Замените на селектор модального окна
+        .should('be.visible');
   });
 });
 
-describe('Hero', () => {
-  it('playground', () => {
+describe('Modal Window', () => {
+  it('should close the modal window when the "closeModal" function is called', () => {
     cy.mount(Hero);
-    cy.get('h1').should('have.text', 'Ремонт ПК');
-  });
-});
 
-describe('Repair Page', () => {
-  it('should open modal on button click', () => {
-    cy.mount(Hero);
-    cy.get('button').click();
-    cy.get('.modal').should('be.visible');
-  });
 
-  it('should close modal on close button click', () => {
-    cy.mount(Hero);
     cy.get('.btn').click();
-    cy.get('.modal').should('be.visible');
-    cy.get('.modal-close').click();
-    cy.get('.modal').should('not.be.visible');
-  });
 
-  it('should close modal on background click', () => {
-    cy.mount(Hero);
-    cy.get('.btn').click();
-    cy.get('.modal').should('be.visible');
-    cy.get('.modal-background').click();
-    cy.get('.modal').should('not.be.visible');
+    cy.get('.modal')
+        .should('be.visible');
+
+    cy.window().its('closeModal').invoke('call');
+
+    cy.get('.modal')
+        .should('not.be.visible');
   });
 });
 

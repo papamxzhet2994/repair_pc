@@ -30,18 +30,6 @@
     }
   }
 
-  function addCountryCode() {
-    if (!phone.startsWith("+7")) {
-      phone = "+7" + phone;
-    }
-  }
-
-  function validatePhone() {
-    const regex = /^\+?\d{0,12}$/;
-    if (!regex.test(phone)) {
-      phone = phone.slice(0, -1);
-    }
-  }
 </script>
 
 
@@ -51,11 +39,11 @@
     <h2>Введите номер телефона</h2>
     <form on:submit={handleSubmit}>
       <label for="name">*Имя:</label>
-      <input type="text" id="name" name="name" required bind:value={name}>
+      <input type="text" id="name" name="name" required bind:value={name}/>
       <label for="phone">*Телефон:</label>
-      <input type="tel" id="phone" name="phone" required bind:value={phone} on:focus={addCountryCode} on:input={validatePhone} maxlength="12" pattern="^\+?\d{10,12}$" title="Введите корректный номер телефона">
+      <input type="tel" id="phone" name="phone" required bind:value={phone} maxlength="12" />
       <label for="service">Что вам требуется:</label>
-      <select id="service" name="service" bind:value={service}>
+      <select id="service" name="service" bind:value={service} required>
         <option value="" selected disabled>Выберите услугу</option>
         <option value="diagnostic">Диагностика ПК</option>
         <option value="repair">Ремонт</option>

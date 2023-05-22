@@ -1,9 +1,8 @@
 <script>
   import swal from 'sweetalert';
   import supabase from '../../supabase.js';
-  import { onMount } from "svelte";
+  import { requests } from "../lib/store.js";
 
-  let requests = [];
 
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
@@ -29,24 +28,26 @@
             .select('email, date, problem')
             .eq('email', (await user).data.user.email)
             .order('date', { ascending: false });
+
     if (error) {
       console.error(error);
       return;
     }
 
-    requests = data.map((row) => ({
+    requests.set(data.map((row) => ({
       email: row.email,
       date: new Date(row.date).toLocaleDateString('ru-RU'),
       problem: row.problem
-    }));
+    })));
   }
 </script>
+
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" on:click={() => closeNav()}>&times;</a>
-  {#if requests.length === 0}
+  {#if $requests.length === 0}
     <p>У Вас нет заявок</p>
   {:else}
-    {#each requests as request}
+    {#each $requests as request}
       <h1>{request.date}</h1>
       <div class="email">
         <h4>{request.email}</h4>
@@ -61,6 +62,7 @@
   <a href="javascript:void(0)" class="closebtn" on:click={() => closeNav()}>x</a>
   <p>История заявок</p>
 </div>
+
 <style>
   .text {
     padding: 8px 12px;

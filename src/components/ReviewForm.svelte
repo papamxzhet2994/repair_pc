@@ -208,6 +208,10 @@ margin-top: 5px;
   color: #333;
 }
 
+.modal-content button.close:hover i {
+  color: #810791;
+}
+
 textarea {
     font-size: 18px;
 }
