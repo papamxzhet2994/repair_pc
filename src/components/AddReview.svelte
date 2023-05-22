@@ -1,27 +1,22 @@
 <script>
   import Button from './Button.svelte';
   import ReviewForm from './ReviewForm.svelte';
-
-  let isModalOpen = false;
-
-
+  import { isModalOpen } from '../lib/store.js';
 
   function handleAddReview() {
-    isModalOpen = true;
+    isModalOpen.set(true);
   }
 
   function handleCloseModal() {
-    isModalOpen = false;
+    isModalOpen.set(false);
   }
 
 
 
-  
-  
 </script>
 
 <Button onAddReview={handleAddReview} />
 
-{#if isModalOpen}
+{#if $isModalOpen}
   <ReviewForm onClose={handleCloseModal} />
 {/if}

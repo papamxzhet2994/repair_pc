@@ -1,13 +1,21 @@
 <script>
     export let review;
     export let isVisible;
+
+    function getStarRating(rating) {
+        const star = '★';
+        const emptyStar = '☆';
+        const fullStars = star.repeat(Math.floor(rating));
+        const emptyStars = emptyStar.repeat(5 - Math.ceil(rating));
+        return fullStars + emptyStars;
+    }
 </script>
 
 {#if isVisible}
     <div class="review-card">
         <p>{review.review}</p>
         <div class="review-author">{review.name}</div>
-        <div class="review-rating">{review.rating}</div>
+        <div class="review-rating">{getStarRating(review.rating)}</div>
     </div>
 {/if}
 
@@ -32,6 +40,10 @@
         font-size: 18px;
         font-weight: bold;
         margin-top: 20px;
+    }
+
+    .review-rating {
+        font-size: 24px;
     }
 
     @media screen and (max-width: 768px) {

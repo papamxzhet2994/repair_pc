@@ -1,93 +1,106 @@
 <script>
   import StarRating from "./StarRating.svelte";
-  export let onClose;
-  export let closeModal ;
   import supabase from "../../supabase.js";
   import swal from "sweetalert";
-  import {reviewsStore} from "../lib/store.js";
+  import { isModalOpen, reviewList } from '../lib/store.js';
+
 
   let name = '';
-  let reviews = [];
-  let date = new Date();
+  let review = '';
   let rating = 0;
 
   async function handleSubmit(event) {
     event.preventDefault();
 
-
-    const {data: {user}, error} = await supabase.auth.getUser();
+    const { data: user, error } = await supabase.auth.getUser();
 
     if (error) {
       swal({
         title: "Ошибка",
-        text: error.message,
+        text: "Произошла ошибка при получении данных о пользователе. Зарегистрируйтесь или войдите.",
         icon: "error"
-      })
-
+      });
       handleCancel();
+      return;
     }
-
 
     if (!user) {
       swal("Ошибка", "Только зарегистрированные пользователи могут оставлять отзывы", "error");
       return;
     }
-    if (name.trim() === '' || reviews.trim() === '') {
+
+    if (name.trim() === '' || review.trim() === '') {
       swal({
         title: "Ошибка",
-        text: "Пожайлуста, заполните все поля",
+        text: "Пожалуйста, заполните все поля",
         icon: "error"
-      })
+      });
       return;
     }
-  addReview();
-    async function addReview() {
 
-      const {data, error} = await supabase.from("review").insert([
-        {
-          name: name,
-          review: reviews,
-          date: date,
-          rating: rating
-        }
-      ]);
+    await addReview();
+  }
 
-      if (error) {
-        console.log("Ошибка при отправке отзыва:", error);
-        handleCancel();
-      } else {
-        console.log("Отзыв успешно отправлен:", data);
-        name = "";
-        reviews = data;
-        reviewsStore.set(reviews);
-        swal("Успешно", "Спасибо за ваш отзыв!", "success");
-        handleCancel();
+  async function addReview() {
+    const date = new Date();
+
+    const { data, error } = await supabase.from("review").insert([
+      {
+        name: name,
+        review: review,
+        date: date,
+        rating: rating
       }
+    ]);
+
+    if (error) {
+      console.log("Ошибка при отправке отзыва:", error);
+      handleCancel();
+    } else {
+      console.log("Отзыв успешно отправлен:", data);
+      name = "";
+      review = "";
+      rating = 0;
+      swal("Успешно", "Спасибо за ваш отзыв!", "success");
+      handleCancel();
+      await getReviews();
     }
   }
+
+  async function getReviews() {
+    let { data, error } = await supabase
+            .from('review')
+            .select('*')
+            .order('id', { ascending: false });
+    if (error) {
+      console.log(error);
+      reviewList.set([]);
+    } else {
+      reviewList.set(data);
+    }
+  }
+
   function handleCancel() {
-    onClose();
+    isModalOpen.set(false);
   }
 </script>
 
-
-  <div class="reviews-container">
+<div class="reviews-container">
   <div class="modal" class:modal-open={true}>
     <div class="modal-content">
       <h2>Добавить отзыв</h2>
       <form on:submit={handleSubmit}>
-
         <label>
           Имя:
           <input type="text" bind:value={name} />
         </label>
         <label>
           Ваш отзыв:
-          <textarea bind:value={reviews}></textarea>
+          <textarea bind:value={review}></textarea>
+        </label>
         <label>
           Оценка:
           <StarRating bind:value={rating} />
-        </label>
         </label>
         <button class="send" type="submit">Отправить</button>
         <button class="close" on:click={handleCancel}><i class="fa-sharp fa-solid fa-xmark"></i></button>
@@ -96,7 +109,8 @@
   </div>
 </div>
 
-  <style>
+
+<style>
 .modal {
   color: black;
   position: fixed;

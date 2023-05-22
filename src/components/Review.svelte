@@ -1,37 +1,24 @@
 <script>
-  import { writable } from 'svelte/store';
-  import { onMount } from 'svelte';
   import supabase from "../../supabase";
+  import { onMount } from "svelte";
+
   import AddReview from "./AddReview.svelte";
   import ReviewCard from "./ReviewCard.svelte";
-  import {reviewsStore} from "../lib/store.js";
+  import { reviewList } from "../lib/store.js";
+
   let current = 0;
   let reviews = [];
 
-
-
   async function getReviews() {
     let { data, error } = await supabase
-            .from('review')
-            .select('*')
-            .order('id', { ascending: false });
+            .from("review")
+            .select("*")
+            .order("id", { ascending: false });
     if (error) {
       console.log(error);
       reviews = [];
     } else {
       reviews = data;
-    }
-    reviewsStore.set(reviews);
-  }
-  async function addReview(review) {
-    const { data, error } = await supabase.from('review').insert([review]);
-    if (error) {
-      console.error(error);
-    } else {
-      const newReview = data ? data[0] : review; // Use the inserted data if available, otherwise use the review object
-      reviews.unshift(newReview);
-      reviewsStore.set([...reviews]);
-      current = 0;
     }
   }
 
@@ -43,27 +30,31 @@
     current = (current - 1 + reviews.length) % reviews.length;
   }
 
-  onMount(getReviews);
+  onMount(async () => {
+    await getReviews();
+  });
+
+  $: {
+    // Обновляем отзывы при изменении current или reviews
+    $reviewList = reviews;
+  }
 </script>
 
 <section id="review" class="review">
   <div class="container">
     <h2>Отзывы наших клиентов</h2>
     <div class="review-cards" id="reviews-container">
-      {#each $reviewsStore as review, i}
-        <ReviewCard
-                review={review}
-                isVisible={i === current}
-        />
+      {#each $reviewList as review, i}
+        <ReviewCard review={review} isVisible={i === current} />
       {/each}
     </div>
     <div class="buttons-container">
       <div class="buttons" style="text-align: center;">
         <button class="slide-left" on:click={prevTestimonial} disabled={current === 0}>Назад</button>
-        <button class="slide-right" on:click={nextTestimonial} disabled={current === $reviewsStore.length - 1}>Вперед</button>
+        <button class="slide-right" on:click={nextTestimonial} disabled={current === $reviewList.length - 1}>Вперед</button>
       </div>
       <div class="add-review-container">
-        <AddReview on:reviewAdded={addReview} />
+        <AddReview />
       </div>
     </div>
   </div>

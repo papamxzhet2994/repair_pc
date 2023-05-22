@@ -1,4 +1,5 @@
 import {writable} from "svelte/store";
 
-export let reviews = [];
-export const reviewsStore = writable(reviews);
+export const reviews = writable([]),
+     isModalOpen = writable(false),
+     reviewList = writable([]);
