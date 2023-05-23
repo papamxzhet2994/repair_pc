@@ -31,9 +31,6 @@ fetchMasters();
 </section>
 
   <style>
-
-
-
     .masters {
       text-align: center;
       background-color: #fff;

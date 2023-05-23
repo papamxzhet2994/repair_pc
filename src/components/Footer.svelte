@@ -14,7 +14,7 @@
       <ul class="scroll">
         <li><a href="#hero" use:scrollto={'#hero'}><i class="fa-sharp fa-solid fa-arrow-up"></i></a></li>
         <li><a href="https://vk.com/papamxzhet"><i class="fab fa-vk"></i></a></li>
-        <li><a href="https://github.com/papamxzhet2994"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://t.me/papamxzhet"><i class="fab fa-telegram"></i></a></li>
       </ul>
     </div>  
 </footer>
