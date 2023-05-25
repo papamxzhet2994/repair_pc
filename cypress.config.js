@@ -6,5 +6,17 @@ export default defineConfig({
       framework: "svelte",
       bundler: "vite",
     },
+    specPattern: "**/*.cy.{js,jsx,ts,tsx}",
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+      return config;
+    }
   },
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+      return config;
+    },
+  }
+
 });

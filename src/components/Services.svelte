@@ -13,7 +13,7 @@
   <div class="container">
     <h2>Наши услуги</h2>
     <div class="service-cards">
-      <div class="service-card" style="background-image: url('https://multiservice.com.ua/images/remont-pc-min.jpg.pagespeed.ce.YcRygA9olS.jpg')">
+      <div class="service-card" style="background-image: url('https://www.podderzka.ru/uploads/posts/2011-07/1311576019_114c11.jpg')">
         <h3>Диагностика ПК</h3>
         <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
         <ServicesInfo title="Диагностика ПК" content="Мы предоставляем бесплатную диагностику вашего ПК и оцениваем необходимость его ремонта." on:click={closeModal}/>

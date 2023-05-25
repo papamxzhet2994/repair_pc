@@ -1,5 +1,5 @@
-import Hero from "../components/Hero.svelte";
-import Repair from "../components/Repair.svelte";
+import Hero from "../../src/components/Hero.svelte";
+import Repair from "../../src/components/Repair.svelte";
 describe('Modal Window', () => {
   it('should open the modal window when the "Заказать ремонт" button is clicked', () => {
     cy.mount(Hero);

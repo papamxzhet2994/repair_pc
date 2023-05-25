@@ -1,4 +1,4 @@
-import Review from "../components/Review.svelte";
+import Review from "../../src/components/Review.svelte";
 
 describe('Reviews Page', () => {
     it('should display reviews', () => {

@@ -54,7 +54,7 @@ dialog {
 
 i {
   cursor: pointer;
-  font-size: 28 px;
+  font-size: 28px;
   margin-left: auto;
 }
 

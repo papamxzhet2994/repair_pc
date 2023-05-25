@@ -23,3 +23,31 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('getSwal', () => {
+    return cy.get('.swal-modal');
+});
+
+Cypress.Commands.add('closeSwal', () => {
+    cy.getSwal().then(($swal) => {
+        if ($swal.find('.swal-close').length > 0) {
+            cy.get('.swal-close').click();
+        }
+    });
+});
+
+Cypress.Commands.add('confirmSwal', () => {
+    cy.getSwal().then(($swal) => {
+        if ($swal.find('.swal-button--confirm').length > 0) {
+            cy.get('.swal-button--confirm').click();
+        }
+    });
+});
+
+Cypress.Commands.add('cancelSwal', () => {
+    cy.getSwal().then(($swal) => {
+        if ($swal.find('.swal-button--cancel').length > 0) {
+            cy.get('.swal-button--cancel').click();
+        }
+    });
+});
