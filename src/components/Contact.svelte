@@ -3,7 +3,7 @@
   import swal from "sweetalert";
 
   let name = "";
-  let phone = "";
+  let phone = "+7";
   let service = "";
 
   async function handleSubmit(event) {
@@ -30,6 +30,18 @@
     }
   }
 
+  function handlePhoneInput(event) {
+    const input = event.target;
+    input.value = input.value.replace(/\D/g, "");
+  }
+
+  function handlePhoneFocus(event) {
+    const input = event.target;
+    if (!input.value.startsWith("+7")) {
+      input.value = "+7" + input.value;
+    }
+  }
+
 </script>
 
 
@@ -41,7 +53,7 @@
       <label for="name">*Имя:</label>
       <input type="text" id="name" name="name" required bind:value={name}/>
       <label for="phone">*Телефон:</label>
-      <input type="tel" id="phone" name="phone" required bind:value={phone} maxlength="12" />
+      <input type="tel" id="phone" name="phone" required bind:value={phone} maxlength="11" on:keypress={handlePhoneInput} on:focus={handlePhoneFocus}/>
       <label for="service">Что вам требуется:</label>
       <select id="service" name="service" bind:value={service} required>
         <option value="" selected disabled>Выберите услугу</option>

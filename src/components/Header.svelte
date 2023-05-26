@@ -113,9 +113,6 @@
     -webkit-text-fill-color: transparent;
     margin-left: 0;
   }
-
-  
-
 }
 </style>
 
