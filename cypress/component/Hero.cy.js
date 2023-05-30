@@ -6,7 +6,7 @@ describe('Modal Window', () => {
 
     cy.get('.btn').click();
 
-    cy.get('.modal') // Замените на селектор модального окна
+    cy.get('.modal')
         .should('be.visible');
   });
 });
