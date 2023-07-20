@@ -31,7 +31,7 @@ import Repair from './Repair.svelte';
   background-position: left;
   background-size: cover;
   display: flex;
-  justify-content: flex;
+  justify-content: flex-start;
   align-items: center;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   

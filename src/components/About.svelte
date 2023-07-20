@@ -65,15 +65,7 @@
 .about-text p:first-child {
   margin-top: 0;
 }
-.about-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 450px;
-  position: relative;
-  overflow: hidden;
-  flex-basis: 100%;
-}
+
 .about-image img {
   max-width: 100%;
   position: absolute;
@@ -92,9 +84,7 @@
   flex-basis: 50%;
   margin-right: 50px;
 }
-.about-image {
-  flex-basis: 45%;
-}
+
 .about-image img {
   position: relative;
   top: auto;
@@ -131,9 +121,6 @@
     text-align: center;
   }
 
-  .about-image {
-    height: 300px;
-  }
 
 
 

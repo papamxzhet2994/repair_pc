@@ -8,7 +8,7 @@
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const { data, error } = await supabase.from("servicesOrder").insert([
+    const { error } = await supabase.from("servicesOrder").insert([
       {
         name: name,
         phone: phone,
@@ -22,7 +22,7 @@
       name = "";
       phone = "";
       service = "";
-      swal({
+      await swal({
         title: "Успешно",
         text: "Мы рассмотрим вашу заявку в скором времени!",
         icon: "success",
@@ -111,7 +111,6 @@
   .btn {
     background-color: #7e2291;
     color: #fff;
-    padding: 0.5rem 1rem;
     border-radius: 10px;
     border: none;
     cursor: pointer;
